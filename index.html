@@ -54,10 +54,10 @@
 
       <!-- Quick Stats -->
       <div class="home-stats">
-        <div class="home-stat"><div class="num">82</div><div class="lbl">Hero Guides</div></div>
+        <div class="home-stat"><div class="num">126</div><div class="lbl">Hero Guides</div></div>
         <div class="home-stat"><div class="num">3</div><div class="lbl">Files Per Hero</div></div>
-        <div class="home-stat"><div class="num">6</div><div class="lbl">Roles Covered</div></div>
-        <div class="home-stat"><div class="num">246</div><div class="lbl">Total MD Files</div></div>
+        <div class="home-stat"><div class="num">7</div><div class="lbl">Roles Covered</div></div>
+        <div class="home-stat"><div class="num">378</div><div class="lbl">Total MD Files</div></div>
       </div>
     </div>
   </section>
@@ -146,6 +146,9 @@
     fetch('data/heroes.json')
       .then(r => r.json())
       .then(data => {
+        document.getElementById('statHeroes').textContent = data.heroes.length;
+        document.getElementById('statRoles').textContent = new Set(data.heroes.map(function(h){return h.roleKey;})).size;
+        document.getElementById('statFiles').textContent = data.heroes.length * 3;
         const popular = ['lu-bu','lam','angela','daji','marco-polo','wukong','sun-ce','yaria','arthur','luna','diaochan','prince-of-lanling'];
         const grid = document.getElementById('popularHeroes');
         grid.innerHTML = popular.map(function(slug) {
