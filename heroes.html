@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse all Honor of Kings heroes — filter by role, see difficulty, and click for detailed guides.">
+  <meta name="robots" content="index, follow">
+  <title>Hero Gallery — HOK QuickRef</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon">⚔</div>
+        <span>HOK QuickRef</span><span class="unofficial-badge">unofficial</span>
+      </a>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="heroes.html" class="active">Heroes</a></li>
+        <li><a href="tips.html">Tips</a></li>
+        <li><a href="items.html">Items</a></li>
+        <li><a href="strategy.html">Strategy</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="breadcrumb">
+    <div class="container"><a href="index.html">Home</a><span>/</span><strong>Heroes</strong></div>
+  </div>
+
+  <section class="section" style="padding-top:1.5rem;">
+    <div class="container">
+      <div class="section-header">
+        <h1>Hero Gallery</h1>
+        <p>Click any hero for detailed builds, combos, matchup tips, and counter strategies</p>
+      </div>
+      <div class="role-filters" id="roleFilters"></div>
+      <div class="hero-grid" id="heroGrid"></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>⚔ HOK QuickRef</h3>
+          <p><strong style="color:var(--gold);">⚠ Unofficial fan site.</strong> Player-discovered tips collection. Not affiliated with Tencent / TiMi.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Browse</h4>
+          <ul><li><a href="index.html">Home</a></li><li><a href="tips.html">Tips</a></li><li><a href="items.html">Items</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h4>Add Content</h4>
+          <ul><li><a href="#">GitHub</a></li><li><a href="#">How to Contribute</a></li></ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 HOK QuickRef. Unofficial fan site.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">↑</button>
+  <script>
+    // === HERO GALLERY — renders cards, then loads avatars ===
+    (function(){
+      var grid = document.getElementById('heroGrid');
+      var filterBox = document.getElementById('roleFilters');
+      if (!grid) return;
+
+      fetch('data/heroes.json?v=2').then(function(r){return r.json()}).then(function(data){
+        var heroes = data.heroes;
+        var roles = data.roles;
+
+        // Role filter pills
+        var pills = '<span class="role-pill active" data-role="all">All ('+heroes.length+')</span>';
+        roles.forEach(function(r){
+          var count = heroes.filter(function(h){return h.roleKey===r.key;}).length;
+          pills += '<span class="role-pill" data-role="'+r.key+'">'+r.emoji+' '+r.name+' ('+count+')</span>';
+        });
+        filterBox.innerHTML = pills;
+
+        // Render cards — ALL start with emoji, images come later
+        var html = '';
+        heroes.forEach(function(h){
+          html += buildCard(h);
+        });
+        grid.innerHTML = html;
+
+        // Now load avatar images for heroes that have them
+        heroes.forEach(function(h){
+          if (!h.image) return;
+          var img = new Image();
+          img.onload = function(){
+            var el = document.getElementById('av-'+h.slug);
+            if (el) { el.innerHTML = ''; el.appendChild(this); }
+          };
+          // onerror: do nothing, emoji stays
+          img.style.cssText = 'width:56px;height:56px;border-radius:50%;object-fit:cover';
+          img.src = h.image + '?v=2';
+          img.alt = h.name;
+        });
+
+        // Filter handlers
+        filterBox.querySelectorAll('.role-pill').forEach(function(pill){
+          pill.addEventListener('click', function(){
+            filterBox.querySelectorAll('.role-pill').forEach(function(p){ p.classList.remove('active'); });
+            pill.classList.add('active');
+            var role = pill.getAttribute('data-role');
+            grid.querySelectorAll('.hero-card').forEach(function(card){
+              card.style.display = (role==='all' || card.getAttribute('data-role')===role) ? '' : 'none';
+            });
+          });
+        });
+      });
+
+      function buildCard(h){
+        var stars = '';
+        for (var i=0; i<5; i++) stars += i<h.difficulty ? '★' : '☆';
+        var attrs = h.image ? ' id="av-'+h.slug+'"' : '';
+        return '<div class="hero-card" data-role="'+h.roleKey+'" onclick="location.href=\'hero.html?hero='+h.slug+'\'">'
+          + '<div class="hero-card-avatar '+h.roleKey+'"'+attrs+'>'+h.emoji+'</div>'
+          + '<div class="hero-card-name">'+h.name+(h.region==='china'?' <span style="font-size:0.6rem;background:#de3320;color:#fff;padding:1px 5px;border-radius:3px;vertical-align:middle">CN</span>':'')+'</div>'
+          + '<div class="hero-card-role">'+h.role+'</div>'
+          + '<div class="hero-card-diff">'+stars+'</div>'
+          + '</div>';
+      }
+    })();
+  </script>
+</body>
+</html>

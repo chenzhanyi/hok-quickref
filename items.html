@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Items — HOK QuickRef</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .item-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:0.75rem}
+    .item-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:0.85rem;cursor:pointer;transition:all .2s;display:flex;flex-direction:column;gap:0.4rem}
+    .item-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+    .item-card-name{font-weight:600;font-size:0.88rem;line-height:1.3}
+    .item-card-price{font-family:var(--font-mono);font-size:0.8rem;color:var(--gold);white-space:nowrap}
+    .item-card-type{font-size:0.7rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.04em}
+    .item-card-stats{font-size:0.75rem;color:var(--text-secondary);line-height:1.6}
+    .item-card-effect{font-size:0.72rem;color:var(--accent);line-height:1.5;padding-top:0.4rem;border-top:1px solid var(--border)}
+    .item-detail{display:none}
+    .item-detail.show{display:block}
+    .item-detail-back{cursor:pointer;color:var(--accent);margin-bottom:1rem;display:inline-block}
+    .item-detail-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem}
+    .item-detail-card h2{margin-bottom:0.25rem}
+    .item-detail-stats{font-size:0.95rem;line-height:1.8;color:var(--text-secondary);margin:1rem 0}
+    .item-detail-effect{background:rgba(79,143,255,0.06);border:1px solid rgba(79,143,255,0.15);border-radius:var(--radius);padding:1rem 1.25rem;font-size:0.88rem;line-height:1.9;color:var(--accent);margin-bottom:0.75rem}
+    .item-detail-cn{background:rgba(255,140,0,0.05);border:1px solid rgba(255,140,0,0.2);border-radius:var(--radius);padding:1rem 1.25rem;font-size:0.88rem;line-height:1.9;color:#e09030;margin-bottom:0.75rem}
+    .item-detail-tips{background:var(--bg-secondary);border:1px dashed var(--border);border-radius:var(--radius);padding:1rem;margin-top:1rem;font-size:0.85rem;color:var(--text-muted)}
+  </style>
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo"><div class="logo-icon">⚔</div><span>HOK QuickRef</span><span class="unofficial-badge">unofficial</span></a>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li><li><a href="heroes.html">Heroes</a></li><li><a href="tips.html">Tips</a></li><li><a href="items.html" class="active">Items</a></li><li><a href="strategy.html">Strategy</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="breadcrumb"><div class="container"><a href="index.html">Home</a><span>/</span><strong>Items</strong></div></div>
+
+  <section class="section" style="padding-top:1.5rem">
+    <div class="container">
+      <div class="section-header"><h1>Item Database · 道具数据库</h1><p>115 items with official CN stats &amp; English translations. Click any item for details.</p></div>
+      <div id="app"></div>
+    </div>
+  </section>
+
+  <footer class="footer"><div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><h3>⚔ HOK QuickRef</h3><p>Unofficial player tips collection.</p></div>
+      <div class="footer-col"><h4>Browse</h4><ul><li><a href="index.html">Home</a></li><li><a href="heroes.html">Heroes</a></li><li><a href="tips.html">Tips</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2025 HOK QuickRef. Unofficial fan site.</p></div>
+  </div></footer>
+  <button class="scroll-top" id="scrollTopBtn">↑</button>
+
+  <script>
+    (function(){
+      var app = document.getElementById('app');
+      if (!app) return;
+
+      var currentFilter = 'all';
+      var allItems = [];
+
+      fetch('data/items.json').then(function(r){return r.json()}).then(function(d){
+        allItems = d.items;
+        render(function(){
+          checkHash();
+        });
+      });
+
+      window.addEventListener('hashchange', function(){
+        if (allItems.length) checkHash();
+      });
+
+      function checkHash(){
+        var hash = window.location.hash.replace('#','');
+        if (!hash) return;
+        var item = allItems.find(function(i){return i.slug===hash});
+        if (item) showItemDetail(item);
+      }
+
+      function showItemDetail(item){
+        if (currentFilter !== 'all' && item.typeKey !== currentFilter) {
+          currentFilter = 'all';
+          render(function(){
+            var it = allItems.find(function(i){return i.slug===item.slug});
+            if (it) showDetail(it);
+          });
+          return;
+        }
+        showDetail(item);
+      }
+
+      function showDetail(item){
+        var detail = document.getElementById('itemDetail');
+        if (!detail) return;
+        var statsEn = (item.des1_en||'').replace(/\n/g,'<br>');
+        var statsCn = (item.des1_cn||'').replace(/\n/g,'<br>');
+        var effectEn = item.des2_en||'';
+        var effectCn = item.des2_cn||'';
+
+        var imgTag = item.image ? '<img src="'+item.image+'" style="width:64px;height:64px;border-radius:8px;margin-bottom:0.75rem;object-fit:contain" onerror="this.remove()">' : '';
+        detail.innerHTML =
+          '<span class="item-detail-back" onclick="document.getElementById(\'itemDetail\').classList.remove(\'show\');history.replaceState(null,null,window.location.pathname);window.scrollTo({top:0})">← Back to items</span>'
+          + '<div class="item-detail-card">'
+          + imgTag
+          + '<h2>'+item.name+' <span style="font-weight:400;color:var(--text-muted);font-size:0.95rem">'+item.name_cn+'</span></h2>'
+          + '<p style="color:var(--gold);font-family:var(--font-mono);margin-bottom:0.75rem">'+item.total_price+' gold <span style="color:var(--text-muted)">· '+item.type+'</span></p>'
+          + (statsEn ? '<div class="item-detail-stats"><strong>Stats</strong><br>'+statsEn+'</div>' : '')
+          + (effectEn ? '<div class="item-detail-effect"><strong>✨ Effect</strong><br>'+effectEn+'</div>' : '')
+          + (statsCn || effectCn ? '<div class="item-detail-cn"><strong>🇨🇳 中文原文</strong><br>'+(statsCn||'')+(effectCn?'<br><br>'+effectCn:'')+'</div>' : '')
+          + '<div class="item-detail-tips"><strong>💡 Player Tips</strong><br>No tips yet. Know a clever use for '+item.name+'?</div>'
+          + '</div>';
+
+        detail.classList.add('show');
+        detail.scrollIntoView({behavior:'smooth'});
+      }
+
+      function render(callback){
+        var types = [
+          {key:'all', name:'All', emoji:'📦'},
+          {key:'physical', name:'Physical', emoji:'🗡'},
+          {key:'magic', name:'Magic', emoji:'🔮'},
+          {key:'defense', name:'Defense', emoji:'🛡'},
+          {key:'movement', name:'Movement', emoji:'👟'},
+          {key:'jungling', name:'Jungling', emoji:'🌲'},
+          {key:'support', name:'Support', emoji:'🛟'}
+        ];
+        types.forEach(function(t){
+          t.count = t.key==='all' ? allItems.length : allItems.filter(function(i){return i.typeKey===t.key}).length;
+        });
+
+        var filtered = currentFilter==='all' ? allItems : allItems.filter(function(i){return i.typeKey===currentFilter});
+
+        var html = '<div class="role-filters">';
+        types.forEach(function(t){
+          html += '<span class="role-pill'+(currentFilter===t.key?' active':'')+'" data-filter="'+t.key+'">'+t.emoji+' '+t.name+' <small>('+t.count+')</small></span>';
+        });
+        html += '</div>';
+
+        html += '<div class="item-grid">';
+        filtered.forEach(function(item){
+          var stats = item.des1_en || '';
+          var effect = item.des2_en || '';
+          var img = item.image ? '<img src="'+item.image+'" style="width:44px;height:44px;border-radius:6px;object-fit:contain" loading="lazy" onerror="this.style.display=\'none\'">' : '';
+          html += '<div class="item-card" data-slug="'+item.slug+'">'
+            + (img ? '<div style="display:flex;align-items:center;gap:0.5rem">'+img+'<div style="flex:1;min-width:0"><div class="item-card-name">'+item.name+'</div><div class="item-card-name" style="font-size:0.72rem;color:var(--text-muted);font-weight:400">'+item.name_cn+'</div></div></div>' : '<div><div class="item-card-name">'+item.name+'</div><div class="item-card-name" style="font-size:0.72rem;color:var(--text-muted);font-weight:400">'+item.name_cn+'</div></div>')
+            + '<div style="display:flex;justify-content:space-between;align-items:center;margin-top:0.15rem"><span class="item-card-type">'+item.type+'</span><span class="item-card-price">'+item.total_price+'g</span></div>'
+            + (stats ? '<div class="item-card-stats">'+stats.replace(/\n/g,'<br>')+'</div>' : '')
+            + (effect ? '<div class="item-card-effect">'+effect.substring(0,130)+(effect.length>130?'...':'')+'</div>' : '')
+            + '</div>';
+        });
+        html += '</div>';
+        html += '<div class="item-detail" id="itemDetail"></div>';
+        app.innerHTML = html;
+
+        app.querySelectorAll('.role-pill').forEach(function(p){
+          p.addEventListener('click',function(){
+            currentFilter = this.dataset.filter;
+            document.getElementById('itemDetail').classList.remove('show');
+            history.replaceState(null,null,window.location.pathname);
+            window.scrollTo({top:0});
+            render();
+          });
+        });
+
+        app.querySelectorAll('.item-card').forEach(function(card){
+          card.addEventListener('click',function(){
+            var slug = this.dataset.slug;
+            var item = allItems.find(function(i){return i.slug===slug});
+            if (!item) return;
+            history.replaceState(null,null,'#'+item.slug);
+            showDetail(item);
+          });
+        });
+
+        if (callback) callback();
+      }
+    })();
+  </script>
+</body>
+</html>

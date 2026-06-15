@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rm -rf /Users/mac/Downloads/hok-guide/heroes/*)",
+      "Bash(rm -f /Users/mac/Downloads/hok-guide/data/heroes.json)",
+      "Bash(rm -rf /Users/mac/Downloads/hok-guide/items_data/*)",
+      "Bash(mkdir -p /Users/mac/Downloads/hok-guide/items_data/images)"
+    ]
+  }
+}

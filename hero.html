@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hero Guide — HOK QuickRef</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo"><div class="logo-icon">⚔</div><span>HOK QuickRef</span><span class="unofficial-badge">unofficial</span></a>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li><li><a href="heroes.html">Heroes</a></li><li><a href="tips.html">Tips</a></li><li><a href="items.html">Items</a></li><li><a href="strategy.html">Strategy</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="breadcrumb" id="breadcrumb">
+    <div class="container"><a href="index.html">Home</a><span>/</span><a href="heroes.html">Heroes</a><span>/</span><strong>Loading...</strong></div>
+  </div>
+
+  <section class="section" style="padding-top:1rem;">
+    <div class="container" id="heroContent">
+      <div class="hero-detail-header" id="heroHeader"></div>
+      <div class="content-tabs">
+        <button class="content-tab active" data-tab="overview">📋 Overview</button>
+        <button class="content-tab" data-tab="tips">💡 Tips &amp; Tricks</button>
+        <button class="content-tab" data-tab="build">⚔ Build &amp; Items</button>
+      </div>
+      <div class="content-panel active" id="panel-overview"><p class="loading-text">Loading...</p></div>
+      <div class="content-panel" id="panel-tips"><p class="loading-text">Loading...</p></div>
+      <div class="content-panel" id="panel-build"><p class="loading-text">Loading...</p></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><h3>⚔ HOK QuickRef</h3><p><strong style="color:var(--gold);">⚠ Unofficial fan site.</strong> Not affiliated with Tencent / TiMi.</p></div>
+        <div class="footer-col"><h4>Browse</h4><ul><li><a href="heroes.html">All Heroes</a></li><li><a href="tips.html">Tips &amp; Tech</a></li><li><a href="items.html">Items</a></li></ul></div>
+        <div class="footer-col"><h4>Contribute</h4><ul><li><a href="#">GitHub</a></li><li><a href="#">Add Hero Tips</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2025 HOK QuickRef. Unofficial fan site.</p></div>
+    </div>
+  </footer>
+  <button class="scroll-top" id="scrollTopBtn">↑</button>
+
+  <script src="js/marked.min.js"></script>
+  <script>
+    var slug = new URLSearchParams(location.search).get('hero');
+    if (!slug) { document.getElementById('panel-overview').innerHTML = '<p class="loading-text">No hero specified.</p>'; }
+    else {
+      marked.setOptions({ breaks: true, gfm: true });
+
+      // ONE fetch for hero data, ONE fetch for all content
+      Promise.all([
+        fetch('data/heroes.json').then(function(r){return r.json()}),
+        fetch('data/heroes_content.json').then(function(r){return r.json()})
+      ]).then(function(results){
+        var heroData = results[0];
+        var allContent = results[1];
+        var hero = heroData.heroes.find(function(h){return h.slug === slug});
+        var content = allContent[slug];
+
+        if (!hero || !content) {
+          document.getElementById('panel-overview').innerHTML = '<p class="loading-text" style="color:var(--red)">Hero not found: '+slug+'</p>';
+          return;
+        }
+
+        document.getElementById('breadcrumb').innerHTML = '<div class="container"><a href="index.html">Home</a><span>/</span><a href="heroes.html">Heroes</a><span>/</span><strong>'+hero.name+'</strong></div>';
+        document.title = hero.name + ' — HOK QuickRef';
+
+        document.getElementById('heroHeader').innerHTML =
+          '<div class="hero-detail-avatar '+hero.roleKey+'">'+(hero.image ? '<img src="'+hero.image+'?v=3" width="80" height="80" style="border-radius:50%;object-fit:cover" alt="">' : (hero.emoji||''))+'</div>'+
+          '<div class="hero-detail-info"><h1>'+hero.name+' <span style="font-weight:400;font-size:1rem;color:var(--text-muted)">'+hero.role+'</span></h1>'+
+          '<div class="hero-meta"><span>'+hero.lane+'</span> · '+'★'.repeat(hero.difficulty||0)+'☆'.repeat(5-(hero.difficulty||0))+'</div></div>';
+
+        ['overview','tips','build'].forEach(function(panel){
+          document.getElementById('panel-'+panel).innerHTML = content[panel]
+            ? '<div class="md-content">'+marked.parse(content[panel])+'</div>'
+            : '<p class="loading-text">Coming soon.</p>';
+        });
+
+        document.querySelectorAll('.content-tab').forEach(function(tab){
+          tab.addEventListener('click', function(){
+            document.querySelectorAll('.content-tab').forEach(function(t){t.classList.remove('active');});
+            document.querySelectorAll('.content-panel').forEach(function(p){p.classList.remove('active');});
+            tab.classList.add('active');
+            document.getElementById('panel-'+tab.getAttribute('data-tab')).classList.add('active');
+          });
+        });
+      }).catch(function(e){
+        document.getElementById('panel-overview').innerHTML = '<p class="loading-text" style="color:var(--red)">Failed to load: '+e.message+'</p>';
+      });
+    }
+  </script>
+</body>
+</html>

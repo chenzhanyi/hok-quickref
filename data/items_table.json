@@ -1,0 +1,920 @@
+[
+  {
+    "name": "Alchemist's Amulet",
+    "price": 0,
+    "total_price": 120,
+    "type": "Magical",
+    "typeKey": "magic",
+    "des1_en": "+10 Mana/5s",
+    "des2_en": ""
+  },
+  {
+    "name": "Ardent Dominator",
+    "price": 0,
+    "total_price": 1950,
+    "type": "Magical",
+    "typeKey": "magic",
+    "des1_en": "+200 Magical Attack\n+600 Max Mana\n+1.5 Mana/5s",
+    "des2_en": ""
+  },
+  {
+    "name": "Augur's Word",
+    "price": 0,
+    "total_price": 2150,
+    "type": "Magical",
+    "typeKey": "magic",
+    "des1_en": "+140 Magical Attack\n+500 Max Mana\n+1,000 Max Health",
+    "des2_en": ""
+  },
+  {
+    "name": "Blood Clan's Grimoire",
+    "price": 0,
+    "total_price": 1240,
+    "type": "Magical",
+    "typeKey": "magic",
+    "des1_en": "+75 Magical Attack\n+10% Cooldown Reduction",
+    "des2_en": ""
+  },
+  {
+    "name": "Breakthrough Robe",
+    "price": 0,
+    "total_price": 2160,
+    "type": "Magical",
+    "typeKey": "magic",
+    "des1_en": "+120 Magical Attack\n+1,000 Max Health",
+    "des2_en": ""
+  },
+  {
+    "name": "Evolution Crystal",
+    "price": 0,
+    "total_price": 720,
+    "type": "Magical",
+    "typeKey": "magic",
+    "des1_en": "+400 Max Mana\n+400 Max Health",
+    "des2_en": ""
+  },
+  {
+    "name": "Frozen Breath",
+    "price": 0,
+    "total_price": 2100,
+    "type": "Magical",
+    "typeKey": "magic",
+    "des1_en": "+60 Magical Attack\n+5% Cooldown Reduction\n+600 Max Health",
+    "des2_en": ""
+  },
+  {
+    "name": "Golden Blade",
+    "price": 0,
+    "total_price": 2070,
+    "type": "Magical",
+    "typeKey": "magic",
+    "des1_en": "+20% Attack Speed\n+160 Magical Attack\n+5% Movement Speed",
+    "des2_en": ""
+  },
+  {
+    "name": "Grand Staff",
+    "price": 0,
+    "total_price": 820,
+    "type": "Magical",
+    "typeKey": "magic",
+    "des1_en": "+120 Magical Attack",
+    "des2_en": ""
+  },
+  {
+    "name": "Holy Grail",
+    "price": 0,
+    "total_price": 1900,
+    "type": "Magical",
+    "typeKey": "magic",
+    "des1_en": "+180 Magical Attack\n+15% Cooldown Reduction\n+500 Max Health",
+    "des2_en": ""
+  },
+  {
+    "name": "Insatiable Tome",
+    "price": 0,
+    "total_price": 2090,
+    "type": "Magical",
+    "typeKey": "magic",
+    "des1_en": "+180 Magical Attack\n+10% Cooldown Reduction\n+1.000 Max Health",
+    "des2_en": ""
+  },
+  {
+    "name": "Mask of Agony",
+    "price": 0,
+    "total_price": 2040,
+    "type": "Magical",
+    "typeKey": "magic",
+    "des1_en": "+20 Magical Attack\n+5% Cooldown Reduction\n+800 Max Health",
+    "des2_en": "Passive – Torment: When a skills hits a target, deals magical damage equal to 3% Health of their current Health 4 times over 3s (up to 200 damage to monster). (Cooldown: 3s)"
+  },
+  {
+    "name": "Moon Goddess",
+    "price": 0,
+    "total_price": 3240,
+    "type": "Magical",
+    "typeKey": "magic",
+    "des1_en": "+160 Magical Attack\n+10% Cooldown Reduction",
+    "des2_en": "Active -Moonguard: Grants immunity to all effects but renders the user unable to move, attack, or use skills for 1.5s. When the effect wears off, grants a 60% Movement Speed bonus that diminishes over 2s and restores a total of (1000 +100%) Health. (Cooldown:90s)"
+  },
+  {
+    "name": "Nebulon Wood",
+    "price": 0,
+    "total_price": 970,
+    "type": "Magical",
+    "typeKey": "magic",
+    "des1_en": "+70 Magical Attack\n+300 Max Health",
+    "des2_en": ""
+  },
+  {
+    "name": "Primal Scepter",
+    "price": 0,
+    "total_price": 540,
+    "type": "Magical",
+    "typeKey": "magic",
+    "des1_en": "+80 Magical Attack",
+    "des2_en": ""
+  },
+  {
+    "name": "Sage's Codex",
+    "price": 0,
+    "total_price": 425,
+    "type": "Magical",
+    "typeKey": "magic",
+    "des1_en": "+25 Magical Attack\n+5% Cooldown Reduction",
+    "des2_en": ""
+  },
+  {
+    "name": "Savant's Wrath",
+    "price": 0,
+    "total_price": 2300,
+    "type": "Magical",
+    "typeKey": "magic",
+    "des1_en": "+240 Magical Attack",
+    "des2_en": ""
+  },
+  {
+    "name": "Scepter of Reverberation",
+    "price": 0,
+    "total_price": 2100,
+    "type": "Magical",
+    "typeKey": "magic",
+    "des1_en": "+240 Magical Attack\n+7% Movement Speed",
+    "des2_en": ""
+  },
+  {
+    "name": "Shattered Grail",
+    "price": 0,
+    "total_price": 900,
+    "type": "Magical",
+    "typeKey": "magic",
+    "des1_en": "+60 Magical Attack\n+8% Cooldown Reduction\n+20 Mana/5s",
+    "des2_en": ""
+  },
+  {
+    "name": "Sparkling Sapphire",
+    "price": 0,
+    "total_price": 220,
+    "type": "Magical",
+    "typeKey": "magic",
+    "des1_en": "+300 Max Mana",
+    "des2_en": ""
+  },
+  {
+    "name": "Spell Tome",
+    "price": 0,
+    "total_price": 300,
+    "type": "Magical",
+    "typeKey": "magic",
+    "des1_en": "+40 Magical Attack",
+    "des2_en": ""
+  },
+  {
+    "name": "Splendor",
+    "price": 0,
+    "total_price": 1990,
+    "type": "Magical",
+    "typeKey": "magic",
+    "des1_en": "+160 Magic Attack\n+10% Cooldown Reduction",
+    "des2_en": "Active-Moonguard: Grants immunity to all effects but renders the user unable to move, attack, or use skills for 1.5s(Cooldown:90s)"
+  },
+  {
+    "name": "Staves of Sorcery",
+    "price": 0,
+    "total_price": 2120,
+    "type": "Magical",
+    "typeKey": "magic",
+    "des1_en": "+180 Magical Attack\n+500 Max Mana\n+500 Max Health\n+8% Movement Speed",
+    "des2_en": ""
+  },
+  {
+    "name": "Stone of Sorcery",
+    "price": 0,
+    "total_price": 890,
+    "type": "Magical",
+    "typeKey": "magic",
+    "des1_en": "+90 Magical Attack",
+    "des2_en": ""
+  },
+  {
+    "name": "Sword of Glory",
+    "price": 0,
+    "total_price": 730,
+    "type": "Magical",
+    "typeKey": "magic",
+    "des1_en": "+400 Max Mana\n+400 Max Health",
+    "des2_en": ""
+  },
+  {
+    "name": "Tome of Wisdom",
+    "price": 0,
+    "total_price": 2990,
+    "type": "Magical",
+    "typeKey": "magic",
+    "des1_en": "+400 Magical Attack\n+10% Cooldown Reduction",
+    "des2_en": ""
+  },
+  {
+    "name": "Twilight Stream",
+    "price": 0,
+    "total_price": 2040,
+    "type": "Magical",
+    "typeKey": "magic",
+    "des1_en": "+140 Magical Attack\n+10% Cooldown Reduction\n+300 Max Health",
+    "des2_en": ""
+  },
+  {
+    "name": "Venomous Staff",
+    "price": 0,
+    "total_price": 2050,
+    "type": "Magical",
+    "typeKey": "magic",
+    "des1_en": "+240 Magical Attack\n+10% Cooldown Reduction\n+5% Movement Speed",
+    "des2_en": ""
+  },
+  {
+    "name": "Void Staff",
+    "price": 0,
+    "total_price": 2110,
+    "type": "Magical",
+    "typeKey": "magic",
+    "des1_en": "+240 Magical Attack\n+500 Max Health",
+    "des2_en": ""
+  },
+  {
+    "name": "Anti-magic Cloak",
+    "price": 0,
+    "total_price": 220,
+    "type": "Defense",
+    "typeKey": "defense",
+    "des1_en": "+90 Magical Defense",
+    "des2_en": ""
+  },
+  {
+    "name": "Belt of Might",
+    "price": 0,
+    "total_price": 900,
+    "type": "Defense",
+    "typeKey": "defense",
+    "des1_en": "+1,000 Max Health",
+    "des2_en": ""
+  },
+  {
+    "name": "Blazing Cape",
+    "price": 0,
+    "total_price": 2000,
+    "type": "Defense",
+    "typeKey": "defense",
+    "des1_en": "+240 Physical Defense\n+1.000 Max Health",
+    "des2_en": ""
+  },
+  {
+    "name": "Blood Rage",
+    "price": 0,
+    "total_price": 2100,
+    "type": "Defense",
+    "typeKey": "defense",
+    "des1_en": "+40 Physical Attack\n+1.000 Max Health",
+    "des2_en": "Active – Blood Fury: Gradually depletes 30% of the current Health, gains a shield equal to (40% Health), and increases Physical Attack by 80over 4s(Cooldown:60s)"
+  },
+  {
+    "name": "Cape of Radiance",
+    "price": 0,
+    "total_price": 950,
+    "type": "Defense",
+    "typeKey": "defense",
+    "des1_en": "+5% Cooldown Reduction\n+90 Physical Defense\n+60 Health/5s",
+    "des2_en": ""
+  },
+  {
+    "name": "Clandestine Cape",
+    "price": 0,
+    "total_price": 1020,
+    "type": "Defense",
+    "typeKey": "defense",
+    "des1_en": "+120 Magical Defense\n+700 Max Health\n+50 Health/5s",
+    "des2_en": ""
+  },
+  {
+    "name": "Cloth Jerkin",
+    "price": 0,
+    "total_price": 220,
+    "type": "Defense",
+    "typeKey": "defense",
+    "des1_en": "+90 Physical Defense",
+    "des2_en": ""
+  },
+  {
+    "name": "Cuirass of Savagery",
+    "price": 0,
+    "total_price": 2050,
+    "type": "Defense",
+    "typeKey": "defense",
+    "des1_en": "+30 Physical Attack\n+220 Physical Defense\n+900 Max Health\n+5% Movement Speed",
+    "des2_en": ""
+  },
+  {
+    "name": "Cuirass of Swiftness",
+    "price": 0,
+    "total_price": 475,
+    "type": "Defense",
+    "typeKey": "defense",
+    "des1_en": "+5% Cooldown Reduction\n+200 Max Health",
+    "des2_en": ""
+  },
+  {
+    "name": "Darknight Breastplate",
+    "price": 0,
+    "total_price": 710,
+    "type": "Defense",
+    "typeKey": "defense",
+    "des1_en": "+180 Magical Defense",
+    "des2_en": ""
+  },
+  {
+    "name": "Dawnlight",
+    "price": 0,
+    "total_price": 1950,
+    "type": "Defense",
+    "typeKey": "defense",
+    "des1_en": "+10% Cooldown Reduction\n+240 Physical Defense\n+150 Health/5s",
+    "des2_en": ""
+  },
+  {
+    "name": "Dragon's Rage",
+    "price": 0,
+    "total_price": 1960,
+    "type": "Defense",
+    "typeKey": "defense",
+    "des1_en": "+120 Physical Defense\n+60 Magical Defense\n+1.200 Max Health",
+    "des2_en": ""
+  },
+  {
+    "name": "Energy Core",
+    "price": 0,
+    "total_price": 800,
+    "type": "Defense",
+    "typeKey": "defense",
+    "des1_en": "+700 Max Health",
+    "des2_en": ""
+  },
+  {
+    "name": "Eye of the Phoenix",
+    "price": 0,
+    "total_price": 2100,
+    "type": "Defense",
+    "typeKey": "defense",
+    "des1_en": "+240 Magical Defense\n+1.200 Max Health\n+100 Health/5s",
+    "des2_en": ""
+  },
+  {
+    "name": "Frigid Charge",
+    "price": 0,
+    "total_price": 2100,
+    "type": "Defense",
+    "typeKey": "defense",
+    "des1_en": "+240 Physical Defense\n+1.000 Max Health",
+    "des2_en": "Active – lmpact: Stuns enemies within a range of 450 for 0.5s. deals 60-200 magical damage to them, and slows them by 50% for 1s. If the target's Movement Speed or Attack Speed was already reduced, the stun time is increased by 0.25s.(Cooldown 90s)"
+  },
+  {
+    "name": "Frosthold Targe",
+    "price": 0,
+    "total_price": 900,
+    "type": "Defense",
+    "typeKey": "defense",
+    "des1_en": "+10% Cooldown Reduction\n+400 Max Mana\n+110 Physical Defense",
+    "des2_en": ""
+  },
+  {
+    "name": "Frostscar's Embrace",
+    "price": 0,
+    "total_price": 2100,
+    "type": "Defense",
+    "typeKey": "defense",
+    "des1_en": "+40 Physical Attack\n+10% Cooldown Reduction\n+500 Max Mana\n+240 Physical Defense\n+500 Max Health",
+    "des2_en": ""
+  },
+  {
+    "name": "Glacial Buckler",
+    "price": 0,
+    "total_price": 2100,
+    "type": "Defense",
+    "typeKey": "defense",
+    "des1_en": "+20% Cooldown Reduction\n+500 Max Mana\n+360 Physical Defense",
+    "des2_en": "Passive – Frost Shock: Fires an ice blast at the enemy when losing 10% or more of current Health from a single attack, dealing 100-240 magical damage to enemies within range and reducing their Attack Speed by 15% and Movement Speed by 30% for 2s. (Cooldown: 2s)."
+  },
+  {
+    "name": "Longnight Guardian",
+    "price": 0,
+    "total_price": 2110,
+    "type": "Defense",
+    "typeKey": "defense",
+    "des1_en": "+360 Magical Defense\n+1,000 Max Health",
+    "des2_en": ""
+  },
+  {
+    "name": "Nettle Gauntlet",
+    "price": 0,
+    "total_price": 710,
+    "type": "Defense",
+    "typeKey": "defense",
+    "des1_en": "+30 Physical Attack\n+160 Physical Defense",
+    "des2_en": ""
+  },
+  {
+    "name": "Ominous Premonition",
+    "price": 0,
+    "total_price": 2180,
+    "type": "Defense",
+    "typeKey": "defense",
+    "des1_en": "+270 Physical Defense\n+1.200 Max Health",
+    "des2_en": ""
+  },
+  {
+    "name": "Overlord's Platemail",
+    "price": 0,
+    "total_price": 2070,
+    "type": "Defense",
+    "typeKey": "defense",
+    "des1_en": "+100 Physical Defense\n+50 Magical Defense\n+1,500 Max Health",
+    "des2_en": ""
+  },
+  {
+    "name": "Pearl of Origin",
+    "price": 0,
+    "total_price": 1250,
+    "type": "Defense",
+    "typeKey": "defense",
+    "des1_en": "+140 Physical Defense\n+140 Magical Defense",
+    "des2_en": ""
+  },
+  {
+    "name": "Phantom",
+    "price": 0,
+    "total_price": 3350,
+    "type": "Defense",
+    "typeKey": "defense",
+    "des1_en": "+40 Physical Attack\n+1.000 Max Health",
+    "des2_en": "Active – Blood Fury: Gradually depletes 30% of the current Health, gains a shield equal to (50% Health ), and increases Physical Attack by 80 over 4s. During this period, deals (8% Health ) extra maqical damage per second to nearby enemies (up to 200 damage to monsters).(Cooldown60s)"
+  },
+  {
+    "name": "Protector's Cuirass",
+    "price": 0,
+    "total_price": 730,
+    "type": "Defense",
+    "typeKey": "defense",
+    "des1_en": "+210 Physical Defense",
+    "des2_en": ""
+  },
+  {
+    "name": "Resilient Agate",
+    "price": 0,
+    "total_price": 300,
+    "type": "Defense",
+    "typeKey": "defense",
+    "des1_en": "+300 Max Health",
+    "des2_en": ""
+  },
+  {
+    "name": "Revitalizing Crystal",
+    "price": 0,
+    "total_price": 140,
+    "type": "Defense",
+    "typeKey": "defense",
+    "des1_en": "+30 Health/5s",
+    "des2_en": ""
+  },
+  {
+    "name": "Sage's Sanctuary",
+    "price": 0,
+    "total_price": 2100,
+    "type": "Defense",
+    "typeKey": "defense",
+    "des1_en": "+140 Physical Defense\n+140 Magical Defense",
+    "des2_en": ""
+  },
+  {
+    "name": "Scale Blade",
+    "price": 0,
+    "total_price": 750,
+    "type": "Defense",
+    "typeKey": "defense",
+    "des1_en": "+60 Physical Defense\n+400 Max Health",
+    "des2_en": ""
+  },
+  {
+    "name": "Spikemail",
+    "price": 0,
+    "total_price": 1950,
+    "type": "Defense",
+    "typeKey": "defense",
+    "des1_en": "+30 Physical Attack\n+360 Physical Defense",
+    "des2_en": ""
+  },
+  {
+    "name": "Succubus Cloak",
+    "price": 0,
+    "total_price": 2080,
+    "type": "Defense",
+    "typeKey": "defense",
+    "des1_en": "+200 Magical Defense\n+1.000 Max Health\n+100 Health/5s",
+    "des2_en": ""
+  },
+  {
+    "name": "Winter",
+    "price": 0,
+    "total_price": 3350,
+    "type": "Defense",
+    "typeKey": "defense",
+    "des1_en": "+240 Physical Defense\n+1.000 Max Health",
+    "des2_en": "Active – Impact: Freezes enemies with in a range of 600 for 0.5s. deals 60-200 magical damage to them, and slows them by 90% for 1s. If the target's Movement Speed or Attack Speed was already reduced, it is frozen for an extra 0.5s.(Cooldown 90s)"
+  },
+  {
+    "name": "Axe of Torment",
+    "price": 0,
+    "total_price": 2090,
+    "type": "Physical",
+    "typeKey": "attack",
+    "des1_en": "+85 Physical Attack\n+15% Cooldown Reduction\n+500 Max Health",
+    "des2_en": ""
+  },
+  {
+    "name": "Bloodsoul",
+    "price": 0,
+    "total_price": 830,
+    "type": "Physical",
+    "typeKey": "attack",
+    "des1_en": "+30 Physical Attack\n+10% Physical Lifesteal",
+    "des2_en": "Passive – Revive: Recovers 400-610 Health over 5s when Health drops below 30%. (Cooldown: 20s)"
+  },
+  {
+    "name": "Bloodweeper",
+    "price": 0,
+    "total_price": 1800,
+    "type": "Physical",
+    "typeKey": "attack",
+    "des1_en": "+100 Physical Attack\n+25% Physical Lifesteal\n+500 Max Health",
+    "des2_en": ""
+  },
+  {
+    "name": "Cloud Piercer",
+    "price": 0,
+    "total_price": 1100,
+    "type": "Physical",
+    "typeKey": "attack",
+    "des1_en": "+40 Physical Attack\n+10% Attack Speed",
+    "des2_en": "Passive – Sunder: Physical Pierce +10% (doubled for ranged heroes)"
+  },
+  {
+    "name": "Dagger",
+    "price": 0,
+    "total_price": 290,
+    "type": "Physical",
+    "typeKey": "attack",
+    "des1_en": "+10% Attack Speed",
+    "des2_en": ""
+  },
+  {
+    "name": "Daybreaker",
+    "price": 0,
+    "total_price": 3400,
+    "type": "Physical",
+    "typeKey": "attack",
+    "des1_en": "+50 Physical Attack\n+35% Attack Speed\n+10% Critical Rate",
+    "des2_en": ""
+  },
+  {
+    "name": "Deepfrost Siege",
+    "price": 0,
+    "total_price": 2050,
+    "type": "Physical",
+    "typeKey": "attack",
+    "des1_en": "+30% Attack Speed\n+600 Max Health",
+    "des2_en": ""
+  },
+  {
+    "name": "Demonsbane",
+    "price": 0,
+    "total_price": 2090,
+    "type": "Physical",
+    "typeKey": "attack",
+    "des1_en": "+90 Physical Attack\n+100 Magical Defense\n+500 Max Health",
+    "des2_en": ""
+  },
+  {
+    "name": "Destiny",
+    "price": 0,
+    "total_price": 1900,
+    "type": "Physical",
+    "typeKey": "attack",
+    "des1_en": "+60 Physical Attack\n+5% Cooldown Reduction",
+    "des2_en": "Passive – Dark Curtain: When taking fatal damage instead of dying immediatly, gains invincible effect and 30% Movement Speed for 1s (0.5s for ranged heroes). (Cooldown: 120s)"
+  },
+  {
+    "name": "Doomsday",
+    "price": 0,
+    "total_price": 2160,
+    "type": "Physical",
+    "typeKey": "attack",
+    "des1_en": "+60 Physical Attack\n+30% Attack Speed\n+10% Physical Lifesteal",
+    "des2_en": ""
+  },
+  {
+    "name": "Dreamforged - Skypiercer",
+    "price": 0,
+    "total_price": 2130,
+    "type": "Physical",
+    "typeKey": "attack",
+    "des1_en": "+100 Physical Attack\n+10% Critical Rate\n+800 Max Health",
+    "des2_en": "Active -Skypiercer: Enhances the next Basic Attack, knocks back target and deals an extra (50%, physical damage (Knockback only effective for ranged heroes.)(Cooldown: 30s)"
+  },
+  {
+    "name": "Dreamforged - Tempest",
+    "price": 0,
+    "total_price": 2090,
+    "type": "Physical",
+    "typeKey": "attack",
+    "des1_en": "+65 Physical Attack\n+25% Attack Speed",
+    "des2_en": ""
+  },
+  {
+    "name": "Eternity Blade",
+    "price": 0,
+    "total_price": 2140,
+    "type": "Physical",
+    "typeKey": "attack",
+    "des1_en": "+110 Physical Attack\n+20% Critical Rate",
+    "des2_en": ""
+  },
+  {
+    "name": "Iron Sword",
+    "price": 0,
+    "total_price": 250,
+    "type": "Physical",
+    "typeKey": "attack",
+    "des1_en": "+20 Physical Attack",
+    "des2_en": ""
+  },
+  {
+    "name": "Lance of Swiftness",
+    "price": 0,
+    "total_price": 375,
+    "type": "Physical",
+    "typeKey": "attack",
+    "des1_en": "+10 Physical Attack\n+5% Cooldown Reduction",
+    "des2_en": ""
+  },
+  {
+    "name": "Master Sword",
+    "price": 0,
+    "total_price": 2100,
+    "type": "Physical",
+    "typeKey": "attack",
+    "des1_en": "+80 Physical Attack\n+20% Critical Rate\n+500 Max Mana\n+500 Max Health",
+    "des2_en": ""
+  },
+  {
+    "name": "Meteor",
+    "price": 0,
+    "total_price": 930,
+    "type": "Physical",
+    "typeKey": "attack",
+    "des1_en": "+55 Physical Attack",
+    "des2_en": "Passive – Sever: Physical Pierce +60"
+  },
+  {
+    "name": "Mortal Punisher",
+    "price": 0,
+    "total_price": 1860,
+    "type": "Physical",
+    "typeKey": "attack",
+    "des1_en": "+100 Physical Attack\n+15% Attack Speed\n+15% Physical Lifesteal",
+    "des2_en": ""
+  },
+  {
+    "name": "Pugilist's Gauntlet",
+    "price": 0,
+    "total_price": 320,
+    "type": "Physical",
+    "typeKey": "attack",
+    "des1_en": "+8% Critical Rate",
+    "des2_en": ""
+  },
+  {
+    "name": "Pure Sky",
+    "price": 0,
+    "total_price": 2120,
+    "type": "Physical",
+    "typeKey": "attack",
+    "des1_en": "+100 Physical Attack\n+10% Cooldown Reduction\n+500 Max Health",
+    "des2_en": "Active-Dispel: Grants 35% damage reductionfor 3s. Can be used whilecrowd controlled. Cooldown:90s."
+  },
+  {
+    "name": "Raging Claw",
+    "price": 0,
+    "total_price": 550,
+    "type": "Physical",
+    "typeKey": "attack",
+    "des1_en": "+15% Critical Rate",
+    "des2_en": ""
+  },
+  {
+    "name": "Shadow Ripper",
+    "price": 0,
+    "total_price": 1950,
+    "type": "Physical",
+    "typeKey": "attack",
+    "des1_en": "+35% Attack Speed\n+25% Critical Rate\n+5% Movement Speed",
+    "des2_en": ""
+  },
+  {
+    "name": "Siege Breaker",
+    "price": 0,
+    "total_price": 2950,
+    "type": "Physical",
+    "typeKey": "attack",
+    "des1_en": "+180 Physical Attack",
+    "des2_en": ""
+  },
+  {
+    "name": "Sky Dome",
+    "price": 0,
+    "total_price": 3370,
+    "type": "Physical",
+    "typeKey": "attack",
+    "des1_en": "+100 Physical Attack\n+10% Cooldown Reduction\n+500 Max Health",
+    "des2_en": "Active – Dispel: Removes all crowd control effects. Increases damage reduction by 40% and Movement Speed by 30% with terrain ignored for 3s. Killing an enemy hero refreshes the effectduration. (Cooldown: 90s)"
+  },
+  {
+    "name": "Sparkforged Dagger",
+    "price": 0,
+    "total_price": 1840,
+    "type": "Physical",
+    "typeKey": "attack",
+    "des1_en": "+35% Attack Speed\n+8% Movement Speed",
+    "des2_en": ""
+  },
+  {
+    "name": "Starbreaker",
+    "price": 0,
+    "total_price": 2100,
+    "type": "Physical",
+    "typeKey": "attack",
+    "des1_en": "+80 Physical Attack\n+10% Cooldown Reduction",
+    "des2_en": ""
+  },
+  {
+    "name": "Storm Sword",
+    "price": 0,
+    "total_price": 910,
+    "type": "Physical",
+    "typeKey": "attack",
+    "des1_en": "+80 Physical Attack",
+    "des2_en": ""
+  },
+  {
+    "name": "Sunchaser",
+    "price": 0,
+    "total_price": 2050,
+    "type": "Physical",
+    "typeKey": "attack",
+    "des1_en": "+25% Attack Speed\n+10% Critical Rate\n+5% Movement Speed",
+    "des2_en": "Active-Daybreak: Increases Basic Attack rangeby 150 (applied to ranged heroes only) and Movement Speed by 20% for 5s. (Cooldown: 60s)"
+  },
+  {
+    "name": "Sunglow Striker",
+    "price": 0,
+    "total_price": 710,
+    "type": "Physical",
+    "typeKey": "attack",
+    "des1_en": "+20 Physical Attack\n+5% Cooldown Reduction\n+400 Max Health",
+    "des2_en": "Passive – Maim: When a skill lands a hit, slow the first enemy hero hit by 10% for 3s. (Cooldown: 8s)"
+  },
+  {
+    "name": "Sunpool",
+    "price": 0,
+    "total_price": 3300,
+    "type": "Physical",
+    "typeKey": "attack",
+    "des1_en": "+25% Attack Speed\n+10% Critical Rate\n+5% Movement Speed",
+    "des2_en": "Active – Daybreak: Increases Basic Attack range by 150 and Movement Speed by 40% and grants Basic Attacks 30% extra damage to enemy nearby the target for 5s The range and damage bonuses are applied to ranged heroes only. (Cooldown :60s)"
+  },
+  {
+    "name": "Swiftstrike Lance",
+    "price": 0,
+    "total_price": 880,
+    "type": "Physical",
+    "typeKey": "attack",
+    "des1_en": "+20% Attack Speed",
+    "des2_en": "Passive – Precision: Basic Attack Damage +40"
+  },
+  {
+    "name": "Thunderclap Brand",
+    "price": 0,
+    "total_price": 450,
+    "type": "Physical",
+    "typeKey": "attack",
+    "des1_en": "+40 Physical Attack",
+    "des2_en": ""
+  },
+  {
+    "name": "Twinblades of Destruction",
+    "price": 0,
+    "total_price": 890,
+    "type": "Physical",
+    "typeKey": "attack",
+    "des1_en": "+15% Attack Speed\n+10% Critical Rate\n+5% Movement Speed",
+    "des2_en": ""
+  },
+  {
+    "name": "Vampiric Scythe",
+    "price": 0,
+    "total_price": 290,
+    "type": "Physical",
+    "typeKey": "attack",
+    "des1_en": "+8% Physical Lifesteal",
+    "des2_en": ""
+  },
+  {
+    "name": "Giant's Grip",
+    "price": 0,
+    "total_price": 2160,
+    "type": "Jungling",
+    "typeKey": "jungle",
+    "des1_en": "+90 Physical Attack\n+5% Cooldown Reduction\n+8% Movement Speed",
+    "des2_en": ""
+  },
+  {
+    "name": "Guerrilla Machete",
+    "price": 0,
+    "total_price": 700,
+    "type": "Jungling",
+    "typeKey": "jungle",
+    "des1_en": "+40 Magical Attack",
+    "des2_en": ""
+  },
+  {
+    "name": "Hunting Knife",
+    "price": 0,
+    "total_price": 250,
+    "type": "Jungling",
+    "typeKey": "jungle",
+    "des1_en": "",
+    "des2_en": ""
+  },
+  {
+    "name": "Patrol Axe",
+    "price": 0,
+    "total_price": 700,
+    "type": "Jungling",
+    "typeKey": "jungle",
+    "des1_en": "+25 Physical Attack",
+    "des2_en": ""
+  },
+  {
+    "name": "Rapacious Bite",
+    "price": 0,
+    "total_price": 2160,
+    "type": "Jungling",
+    "typeKey": "jungle",
+    "des1_en": "+5% Cooldown Reduction\n+1.200 Max Health\n+6% Movement Speed",
+    "des2_en": ""
+  },
+  {
+    "name": "Relentless Blade",
+    "price": 0,
+    "total_price": 700,
+    "type": "Jungling",
+    "typeKey": "jungle",
+    "des1_en": "+400 Max Health",
+    "des2_en": ""
+  },
+  {
+    "name": "Runeblade",
+    "price": 0,
+    "total_price": 2160,
+    "type": "Jungling",
+    "typeKey": "jungle",
+    "des1_en": "+150 Magical Attack\n+5% Cooldown Reduction\n+7% Movement Speed",
+    "des2_en": ""
+  }
+]

@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Complete Honor of Kings strategy guide covering map overview, team composition, early/mid/late game strategy, objective control, vision, rotations, and communication. Win more games with better macro play.">
+  <meta name="keywords" content="Honor of Kings strategy, HOK strategy guide, Honor of Kings macro, HOK map guide, HOK team composition, HOK objectives, HOK rotations">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Honor of Kings Strategy Guide - Win More Games">
+  <meta property="og:description" content="Master macro play with our complete strategy guide. Map overview, game phases, objective control, and team composition.">
+  <meta property="og:type" content="website">
+  <title>Honor of Kings Strategy Guide - Win More Games</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon">⚔</div>
+        <span>HOK QuickRef</span><span class="unofficial-badge">unofficial</span>
+      </a>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="heroes.html">Heroes</a></li>
+        <li><a href="tips.html">Tips</a></li>
+        <li><a href="items.html">Items</a></li>
+        <li><a href="strategy.html" class="active">Strategy</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <div class="container">
+      <a href="index.html">Home</a><span>/</span><strong>Strategy</strong>
+    </div>
+  </div>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="container">
+      <h1>Strategy Guide — Win More Games</h1>
+      <p>Mechanics win lanes, but macro play wins games. This comprehensive strategy guide covers everything from map fundamentals to advanced rotational play, designed to elevate your decision-making at every stage of the game.</p>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- ===== MAP OVERVIEW ===== -->
+    <section class="section" style="padding-top:0;">
+      <div class="section-title">
+        <h2>🗺 Map Overview</h2>
+        <p>Understanding the battlefield is the first step to mastering it. Here's a breakdown of every lane, objective, and zone on the Honor of Kings map.</p>
+      </div>
+
+      <div class="strategy-block">
+        <h3>🏰 The Three Lanes</h3>
+        <p style="color:var(--text-secondary);margin-bottom:1rem;">The map is divided into three lanes connected by a river that runs diagonally from top-left to bottom-right. Each lane has three defensive towers per team, with the Ancient (Nexus) sitting in the back of each base.</p>
+
+        <h4 style="color:var(--accent-gold);">Clash Lane (Top Lane)</h4>
+        <p style="color:var(--text-muted);margin-bottom:1rem;">The longest solo lane, home to Warriors and Tanks. Features wider spacing between towers and deeper side bushes, making it the most dangerous lane to overextend in. The Clash Laner's primary responsibility is to hold their lane, absorb pressure, and join teamfights using the Primal Portal. Key features: two river bushes, one tribush near tower, and a healing fruit near the outer tower.</p>
+
+        <h4 style="color:var(--accent-gold);">Mid Lane</h4>
+        <p style="color:var(--text-muted);margin-bottom:1rem;">The shortest lane with the most strategic importance. Mid Lane has direct access to both river objectives (Overlord and Tyrant) and the fastest route to both side lanes. Mages dominate this lane because their burst damage and CC enable effective roams. Key features: two river entrance bushes, side bushes on both walls, and the shortest minion travel distance — allowing faster wave clear and roam timings.</p>
+
+        <h4 style="color:var(--accent-gold);">Farm Lane (Bot Lane)</h4>
+        <p style="color:var(--text-muted);margin-bottom:1rem;">The safe haven for Marksmen (ADC) paired with a Support. Farm Lane has the closest distance between outer tower and the wave meeting point, making it the safest lane to farm in. The Marksman's job is to farm gold, survive, and scale into a late-game hyper-carry. Key features: healing fruit near outer tower, dragon pit proximity, and extra brush coverage for vision control.</p>
+      </div>
+
+      <div class="strategy-block" style="margin-top:1.5rem;">
+        <h3>🌳 The Jungle</h3>
+        <p style="color:var(--text-secondary);margin-bottom:1rem;">The jungle is the area between lanes, filled with neutral monster camps that provide gold, experience, and buffs. It's divided into four quadrants: your top-side, your bot-side, enemy top-side, and enemy bot-side.</p>
+
+        <h4 style="color:var(--accent-gold);">Jungle Camp Types</h4>
+        <ul>
+          <li><strong>Red Buff (Brambleback):</strong> Grants bonus true damage on auto-attacks and a slow effect. Typically given to Marksmen after the laning phase. Respawns every 90 seconds.</li>
+          <li><strong>Blue Buff (Sentinel):</strong> Grants mana/energy regeneration and cooldown reduction. Critical for mana-hungry Mages and Junglers. Respawns every 90 seconds.</li>
+          <li><strong>Raptors / Wolves / Golems:</strong> Standard camps that provide gold and experience. Their spawn timers and clear paths determine jungle route efficiency.</li>
+          <li><strong>River Sprite (Crab):</strong> A neutral camp in the river that spawns at 1:00. Contested by both teams — the first skirmish of most games happens here. Provides gold to the entire team that secures it.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== TEAM COMPOSITION ===== -->
+    <section class="section section-dark">
+      <div class="section-title">
+        <h2>👥 Team Composition Guide</h2>
+        <p>A well-constructed team comp wins in champion select. Here's how to build team synergy and draft effectively.</p>
+      </div>
+
+      <div class="strategy-block">
+        <h3>🎯 The Ideal Team Structure</h3>
+        <p style="color:var(--text-secondary);margin-bottom:1rem;">A balanced team composition includes the following elements. Missing any one of these makes your team vulnerable in specific scenarios:</p>
+        <ul>
+          <li><strong>Frontline (Tank/Warrior):</strong> At least one champion who can absorb damage and initiate fights. Without a frontline, your carries have no protection and your team can't siege towers.</li>
+          <li><strong>Sustained Physical Damage (Marksman):</strong> Consistent damage for taking objectives (towers, Tyrant, Tyrant). An ADC is essential — without one, your team can't close out games efficiently.</li>
+          <li><strong>Burst/Magic Damage (Mage):</strong> Magic damage forces enemies to build magic resistance, preventing them from stacking pure armor. Also provides wave clear and AoE for teamfights.</li>
+          <li><strong>Crowd Control (CC):</strong> Stuns, slows, knockups, silences — CC wins teamfights. A team with zero CC (often called a "no-CC comp") is essentially unplayable above Diamond rank.</li>
+          <li><strong>Engage or Disengage:</strong> Your team needs a way to start favorable fights (hard engage like Zhang Fei Ultimate) or prevent unfavorable ones (disengage like Cai Yan heals and speed boosts).</li>
+        </ul>
+
+        <div class="callout info">
+          <strong>💡 Drafting Tip</strong>
+          Avoid triple-ADC or double-Mage comps — they're extremely vulnerable to assassins and lack frontline. Similarly, a team with 4+ physical damage champions lets the enemy build pure armor and ignore magic resistance entirely.
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-top:1.5rem;">
+        <div class="strategy-block">
+          <h3>Team Comp Archetypes</h3>
+
+          <h4 style="color:var(--accent-neon);">🐢 Protect-the-Carry (Peel Comp)</h4>
+          <p style="color:var(--text-muted);font-size:0.9rem;">Build around a hyper-carry ADC (Hou Yi, Marco Polo) with multiple tanks and supports. Play defensively, scale, and win through superior teamfighting in the late game. <strong>Strengths:</strong> Unbeatable late game. <strong>Weaknesses:</strong> Vulnerable early game, can be snowballed against.</p>
+
+          <h4 style="color:var(--accent-neon);">⚡ Pick Composition</h4>
+          <p style="color:var(--text-muted);font-size:0.9rem;">Focus on single-target deletion with assassins (Prince of Lanling, Li Bai). Look for picks in the jungle and force 4v5 fights. <strong>Strengths:</strong> Snowballs hard from early leads. <strong>Weaknesses:</strong> Falls off if games go late and enemies group.</p>
+
+          <h4 style="color:var(--accent-neon);">💥 Teamfight/Wombo Combo</h4>
+          <p style="color:var(--text-muted);font-size:0.9rem;">Stack AoE ultimates — think Lu Bu's Sky Piercer into Diaochan's Ultimate into Zhang Fei's knockback. <strong>Strengths:</strong> Devastating teamfights if combos land. <strong>Weaknesses:</strong> Highly cooldown-dependent; vulnerable when ultimates are down.</p>
+
+          <h4 style="color:var(--accent-neon);">🏃 Split-Push Composition</h4>
+          <p style="color:var(--text-muted);font-size:0.9rem;">One strong side-laner (Lu Bu, Arthur) pressures a lane while the 4-man squad pressures another. <strong>Strengths:</strong> Forces the enemy to split attention. <strong>Weaknesses:</strong> Requires excellent communication; the 4-man squad must not get engaged on 4v5.</p>
+        </div>
+
+        <div class="strategy-block">
+          <h3>🐉 Synergy & Counter-Picks</h3>
+          <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:1rem;">Some heroes naturally complement each other, while others counter specific enemy picks:</p>
+
+          <h4 style="color:var(--accent-green);">Strong Synergies</h4>
+          <ul>
+            <li><strong>Zhang Fei + Hou Yi:</strong> Zhang Fei's peel and shields keep Hou Yi alive to free-fire in teamfights.</li>
+            <li><strong>Angela + any hard-engage tank:</strong> Tank locks enemy in place → Angela lands guaranteed full combo → enemy deleted.</li>
+            <li><strong>Diaochan + Lu Bu:</strong> Both create large zones (Ultimate fields) that stack together, making the fight area a death trap.</li>
+            <li><strong>Cai Yan + Marco Polo:</strong> The sustain from Cai Yan keeps Marco Polo alive through his close-range Ultimate dives.</li>
+          </ul>
+
+          <h4 style="color:var(--accent-red);">Counter Relationships</h4>
+          <ul>
+            <li><strong>Assassins → Immobile Mages/ADCs:</strong> Prince of Lanling counters Angela, Hou Yi, and any champion without escape tools.</li>
+            <li><strong>Tanks with CC → Assassins:</strong> Zhang Fei's instant knockback shuts down Li Bai, Luna, and Prince of Lanling engages.</li>
+            <li><strong>True Damage → Tanks:</strong> Lu Bu and Marco Polo shred tank-heavy comps because true damage ignores armor.</li>
+            <li><strong>Poke Comps → Short-Range Comps:</strong> Long-range champions chip away at melee-heavy comps before they can engage.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== GAME PHASES ===== -->
+    <section class="section">
+      <div class="section-title">
+        <h2>⏱ Game Phase Strategy</h2>
+        <p>Every game follows a three-phase structure. Understanding what your role should be doing in each phase is the essence of macro play.</p>
+      </div>
+
+      <!-- Early Game -->
+      <div class="strategy-block game-phase early">
+        <h3>🌅 Early Game (0:00 – 4:00) — Laying the Foundation</h3>
+        <p style="color:var(--text-muted);margin-bottom:1rem;">The early game is about establishing lane control, securing the first jungle clear, and setting up your team's win conditions. This is the most structured phase — every role has a clear script.</p>
+
+        <h4 style="color:var(--accent-gold);">Per-Role Priorities</h4>
+        <ul>
+          <li><strong>Clash Laner:</strong> Focus on wave management and trading. Don't die to early ganks (expect enemy Jungler at 1:30-2:00). Reach Level 4 safely, then look for Primal Portal plays or roam mid to impact the map.</li>
+          <li><strong>Mid Laner:</strong> Push wave → help secure River Sprite at 1:00 → push wave → look for roam at Level 3-4. The Mid Laner is the team's second roamer in the early game.</li>
+          <li><strong>Jungler:</strong> Complete first clear by ~1:40, contest River Sprite, gank your strongest lane at ~2:00. Secure the first Overlord around 2:00-2:30 if your top lane has priority, then look for Tyrant at 4:00.</li>
+          <li><strong>Marksman:</strong> Farm safely, last-hit perfectly, and don't die. Any death in Farm Lane delays your first item spike significantly. Let your Support control vision.</li>
+          <li><strong>Support:</strong> Ward river at 1:15, protect your ADC, help secure River Sprite, and start roaming after your ADC hits Level 4-5.</li>
+        </ul>
+
+        <div class="callout warning">
+          <strong>⚠ Critical Early Game Mistake</strong>
+          The most common throw in early game is forcing an objective fight when your lane is pushed under tower. If your Farm Lane doesn't have priority (the wave is pushing toward them), you CANNOT safely take Tyrant. The enemy bot lane will arrive first, and you'll lose the fight. Similarly, don't contest Overlord without Clash Lane priority.
+        </div>
+      </div>
+
+      <!-- Mid Game -->
+      <div class="strategy-block game-phase mid" style="margin-top:1.5rem;">
+        <h3>☀ Mid Game (4:00 – 10:00) — Snowballing & Objective Control</h3>
+        <p style="color:var(--text-muted);margin-bottom:1rem;">The mid game is where most games are decided. Outer towers start falling, teamfights become more frequent, and objective control (Dragons, Tyrant) becomes the primary focus. This is the "snowball phase" — the team with the gold lead must accelerate, while the team behind must stabilize.</p>
+
+        <h4 style="color:var(--accent-gold);">If You're Ahead</h4>
+        <ul>
+          <li><strong>Take ALL outer towers.</strong> Towers provide team gold and open up the map. Once all outer towers are down, the enemy jungle becomes yours to invade.</li>
+          <li><strong>Control enemy jungle.</strong> Ward enemy buffs, steal camps, and deny resources. A 3k gold lead becomes 6k when you're taking both jungles.</li>
+          <li><strong>Group and siege.</strong> With a gold lead, your team wins 5v5 fights. Group mid or bot and force tower sieges — the enemy must either fight from behind or give objectives for free.</li>
+          <li><strong>Secure every Tyrant/Overlord.</strong> With map control, you should get every objective. Tyrant buffs stack — 3 Tyrant buffs create an insurmountable lead. Overlord spawns empowered minion waves to pressure lanes.</li>
+        </ul>
+
+        <h4 style="color:var(--accent-gold);">If You're Behind</h4>
+        <ul>
+          <li><strong>Give outer towers if contested.</strong> Don't die defending a Tier 1 tower at 30% HP. It's not worth it. Give the tower and defend at Tier 2.</li>
+          <li><strong>Farm safely and catch waves.</strong> The enemy team will eventually make a mistake. Stay patient, farm every wave you can safely reach, and wait for the enemy to overextend.</li>
+          <li><strong>Trade objectives.</strong> If the enemy takes Dragon, try to sneak Tyrant on the opposite side of the map. Trading is better than giving everything for free.</li>
+          <li><strong>Look for picks.</strong> Ward your own jungle and catch overconfident enemies who push too far alone. A single pick can turn a 3k gold deficit into a 5v4 Baron opportunity.</li>
+        </ul>
+      </div>
+
+      <!-- Late Game -->
+      <div class="strategy-block game-phase late" style="margin-top:1.5rem;">
+        <h3>🌙 Late Game (10:00+) — One Fight Decides Everything</h3>
+        <p style="color:var(--text-muted);margin-bottom:1rem;">In the late game, death timers are long (40-60 seconds), and a single lost teamfight can mean the game. Everyone should be at full build or close to it. The margin for error is razor-thin.</p>
+
+        <h4 style="color:var(--accent-gold);">Late Game Priorities</h4>
+        <ul>
+          <li><strong>Never walk alone.</strong> At 15+ minutes, every champion on the map can be picked off. Move with your team at all times. Wandering alone is the most common late-game throw.</li>
+          <li><strong>Vision around major objectives.</strong> The Tempest Dragon (post-20 min) is the game-ending objective. Both teams will contest — whoever has better vision control wins. Ward the pit, clear enemy wards, and control nearby bushes.</li>
+          <li><strong>Don't start objectives if the enemy team is alive and nearby.</strong> Starting Tyrant/Overlord reduces your team's HP and positions you in a pit (bad terrain for fighting). Only start objectives when you have numbers advantage or the enemy Jungler is dead (Smite is the deciding factor).</li>
+          <li><strong>Protect your carry at all costs.</strong> In late-game teamfights, the team whose ADC survives wins. Tanks and Supports should use every ability to peel for their Marksman. Diving the enemy backline is secondary — keeping your own backline alive is primary.</li>
+          <li><strong>Death timers dictate everything.</strong> At 40+ second death timers, a single pick means a free Overlord or an inhibitor tower. Conversely, dying once means your team must defend 4v5 for nearly a minute.</li>
+        </ul>
+
+        <div class="callout danger">
+          <strong>🔴 The Biggest Late-Game Throw</strong>
+          Getting Overlord/Tempest → pushing mid → enemy respawns → your team overstays for one more tower → enemy engages with homeguard speed → your team gets wiped → enemy runs down mid and ends the game. This happens in ~30% of games above Diamond. When the enemy respawns, LEAVE. Overlord buff will still be active — reset, heal, and push as five.
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== OBJECTIVE CONTROL ===== -->
+    <section class="section section-dark">
+      <div class="section-title">
+        <h2>🎯 Objective Control — Dragons, Tyrants & Towers</h2>
+        <p>Objectives win games, not kills. Understanding objective priority, timing, and setup is what separates good teams from great ones.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="strategy-block">
+          <h3>🐉 Tyrant (Dragon) — Stacking Power</h3>
+          <p style="color:var(--text-secondary);font-size:0.95rem;">Tyrant spawns in the river near Farm Lane at 4:00, respawning every 4 minutes. Each Tyrant kill grants permanent team-wide buffs that stack. The Overlord spawns on the opposite side starting at 2:00, creating empowered minion waves to pressure lanes. Securing 3+ Tyrants over the course of a game creates an enormous statistical advantage.</p>
+          <h4 style="color:var(--accent-gold);font-size:0.9rem;">Dragon Priority Checklist</h4>
+          <ul>
+            <li>✅ Your bot lane has wave priority (wave is pushing toward enemy tower)</li>
+            <li>✅ Vision around Tyrant pit is controlled (wards placed, sweepers used)</li>
+            <li>✅ Your Jungler's Smite is available</li>
+            <li>✅ Enemy Jungler is visible elsewhere (or dead)</li>
+            <li>❌ Don't start if mid lane or bot lane is missing</li>
+          </ul>
+        </div>
+
+        <div class="strategy-block">
+          <h3>🐲 Overlord & Tempest Dragon</h3>
+          <p style="color:var(--text-secondary);font-size:0.95rem;">Overlord spawns on the opposite side of the river (near Clash Lane) starting at 2:00, respawning every 4 minutes. Killing Overlord summons empowered minion vanguards that push lanes. The Tempest Dragon spawns at 20:00 (ultra-late game) and grants the strongest siege buff in the game — it can end matches.</p>
+          <h4 style="color:var(--accent-gold);font-size:0.9rem;">When to Prioritize Overlord</h4>
+          <ul>
+            <li>Trading: enemy takes Tyrant → your team takes Overlord on the opposite side</li>
+            <li>Siege setup: you want to push towers as a group → Overlord buff empowers minions</li>
+            <li>Post-20 min: Tempest Dragon is the most impactful objective on the map — a team wipe at 20+ min with Tempest usually ends the game</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="strategy-block" style="margin-top:1.5rem;">
+        <h3>🏰 Tower Priority — The Real Win Condition</h3>
+        <p style="color:var(--text-secondary);margin-bottom:1rem;">Towers are the ultimate objective. Every tower destroyed grants team gold, removes enemy safe zones, and opens up the map for invades. The priority order for taking towers:</p>
+        <ol class="tips-list">
+          <li><strong>Mid Tier 1 Tower:</strong> The most important tower on the map. Taking it opens both enemy jungle entrances and gives your team complete river control.</li>
+          <li><strong>Farm Lane Tier 1 Tower:</strong> Taking this frees your ADC to rotate and accelerates their gold income. It also gives Dragon-side jungle control.</li>
+          <li><strong>Clash Lane Tier 1 Tower:</strong> Lowest priority of the outer towers, but still important for map control and team gold.</li>
+          <li><strong>Tier 2 Towers:</strong> Taking a Tier 2 tower signals that the lane is won. It also opens the inhibitor tower.</li>
+          <li><strong>Inhibitor Towers & Inhibitors:</strong> Taking an inhibitor spawns super minions in that lane, creating permanent map pressure. This is often the step before ending the game.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== VISION & MAP AWARENESS ===== -->
+    <section class="section">
+      <div class="section-title">
+        <h2>👁 Vision & Map Awareness</h2>
+        <p>Information is the most powerful resource in Honor of Kings. A team with superior vision makes better decisions — and better decisions win games.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="strategy-block">
+          <h3>🔦 Vision Control 101</h3>
+          <ul>
+            <li><strong>Ward with purpose:</strong> Every ward should answer a question: "Where is the enemy Jungler?" "Is Dragon safe?" "Can we push this tower?" Random wards provide random information.</li>
+            <li><strong>Deep wards win games:</strong> Placing a ward at the enemy's Blue Buff or raptor camp tells you exactly where their Jungler is and where they're going. This is 10x more valuable than a river ward.</li>
+            <li><strong>Use sweepers (Oracle Lens):</strong> At least 2 members of your team should have sweepers by mid-game. Clearing enemy vision is as important as placing your own — it denies the enemy the same information advantage.</li>
+            <li><strong>Support's #1 job:</strong> After the laning phase, the Support should be the primary vision controller. Roam ahead of your team, ward key areas, and never face-check alone.</li>
+          </ul>
+        </div>
+
+        <div class="strategy-block">
+          <h3>🗺 Reading the Map</h3>
+          <ul>
+            <li><strong>Enemy missing from lane?</strong> Ping "enemy missing" and assume they're roaming toward your lane. Play defensively until they show on the map again.</li>
+            <li><strong>Enemy Jungler shows top?</strong> Immediately: your bot lane can play aggressively, your Jungler can invade enemy bot-side jungle, and your team can start Dragon.</li>
+            <li><strong>All 5 enemies visible on the map?</strong> You have perfect information. Make the most aggressive play possible — dive, invade, or take an objective. This window of certainty is rare.</li>
+            <li><strong>Multiple enemies missing?</strong> They're either doing an objective (check Dragon/Tyrant pit) or setting up an ambush. Group up and check bushes with abilities before walking in.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ROTATIONS ===== -->
+    <section class="section section-dark">
+      <div class="section-title">
+        <h2>🔄 Rotations — Moving with Purpose</h2>
+        <p>Rotation is the art of moving around the map efficiently. Good rotations create number advantages; bad rotations waste time and farm.</p>
+      </div>
+
+      <div class="strategy-block">
+        <h3>📐 Rotation Fundamentals</h3>
+        <div class="grid-2" style="margin-top:1rem;">
+          <div>
+            <h4 style="color:var(--accent-neon);">When to Rotate</h4>
+            <ul>
+              <li>Your wave is pushed into the enemy tower (you have a roam window)</li>
+              <li>An objective is spawning in the next 30 seconds</li>
+              <li>Your lane opponent is roaming (match or punish)</li>
+              <li>A fight is breaking out nearby that you can reach before it ends</li>
+              <li>Your Jungler is invading and needs backup</li>
+            </ul>
+          </div>
+          <div>
+            <h4 style="color:var(--accent-red);">When NOT to Rotate</h4>
+            <ul>
+              <li>You have 2+ waves crashing into your tower (defend and farm)</li>
+              <li>The fight is too far away (you'll arrive after it's decided)</li>
+              <li>Your team is behind and the fight looks bad (sometimes not joining is correct)</li>
+              <li>You're low on HP/mana (recall and reset instead of arriving half-dead)</li>
+              <li>You'll lose a tower for free if you leave</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-block" style="margin-top:1.5rem;">
+        <h3>🔄 Common Rotation Patterns</h3>
+
+        <h4 style="color:var(--accent-gold);">The 4-Man Dive (Mid Game)</h4>
+        <p style="color:var(--text-muted);">Mid Laner pushes wave → rotates bot with Jungler → 4v2 dive on enemy Farm Lane → take tower → take Dragon. This is the most reliable snowball pattern and should be executed by EVERY team at least once per game.</p>
+
+        <h4 style="color:var(--accent-gold);">Lane Swap (Post First Tower)</h4>
+        <p style="color:var(--text-muted);">After Farm Lane Tier 1 falls, rotate your ADC + Support to Mid Lane. The Mid Laner moves to Farm Lane to catch waves. This puts your ADC in the safest lane (shortest lane = Mid) and gives them access to both sides of the map.</p>
+
+        <h4 style="color:var(--accent-gold);">Objective Trade Rotation</h4>
+        <p style="color:var(--text-muted);">If the enemy team is 5-man grouping for Dragon and your team can't contest: DON'T walk into a losing fight. Instead, rotate to the opposite side of the map and take Tyrant, towers, or enemy jungle camps. Trading is always better than fighting from a disadvantage.</p>
+      </div>
+    </section>
+
+    <!-- ===== FIGHT OR FARM ===== -->
+    <section class="section">
+      <div class="section-title">
+        <h2>⚔ When to Fight vs When to Farm</h2>
+        <p>This decision-making skill alone can add 200+ MMR to your rank. Knowing when to take a fight and when to back off is the core of game sense.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="strategy-block" style="border-left: 3px solid var(--accent-green);">
+          <h3>✅ Fight When...</h3>
+          <ul>
+            <li>You have a numbers advantage (5v4, 4v3, etc.)</li>
+            <li>Your team's key ultimates are available and the enemy's are on cooldown</li>
+            <li>You're fighting around a warded objective with your team in position</li>
+            <li>The enemy is out of position (ADC farming alone, Jungler showing on opposite side)</li>
+            <li>You have a significant gold lead (3k+) and your item spikes are online</li>
+            <li>The enemy just used key summoner spells (Flicker, Purify)</li>
+            <li>Your team's power-spike composition has hit its timing (e.g., Lu Bu + Diaochan both Level 4)</li>
+          </ul>
+        </div>
+
+        <div class="strategy-block" style="border-left: 3px solid var(--accent-red);">
+          <h3>❌ Farm/Retreat When...</h3>
+          <ul>
+            <li>You're outnumbered (don't be the hero — you'll just be dead)</li>
+            <li>The enemy has a significant gold lead (3k+) and item advantage</li>
+            <li>Your team's key ultimates are on cooldown (type "ult CD" in chat to communicate)</li>
+            <li>The fight is in an unwarded area and enemies are missing from the map</li>
+            <li>Your wave is crashing into your tower (farm is guaranteed gold; fight outcomes are uncertain)</li>
+            <li>The objective fight isn't decisive (it's the 1st Dragon, not game-ending)</li>
+            <li>You're low on resources (HP, mana) and need to reset</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout success" style="margin-top:1.5rem;">
+        <strong>✅ The "Gold Efficiency" Test</strong>
+        Before committing to any fight, ask yourself: "What do we gain if we win, and what do we lose if we lose?" If winning gives you a Dragon but losing gives the enemy Baron + two towers + an inhibitor, that's a terrible fight to take — even if you have a 60% chance of winning it. Risk vs. reward evaluation IS game sense.
+      </div>
+    </section>
+
+    <!-- ===== COMMUNICATION ===== -->
+    <section class="section section-dark">
+      <div class="section-title">
+        <h2>📢 Communication & Ping Guide</h2>
+        <p>Honor of Kings' ping system is powerful and fast. Here's how to use it effectively to coordinate with your team — no typing required.</p>
+      </div>
+
+      <div class="strategy-block">
+        <h3>🟢 Essential Pings Everyone Should Use</h3>
+        <div class="grid-2" style="margin-top:1rem;">
+          <div>
+            <h4 style="color:var(--accent-neon);">Information Pings</h4>
+            <ul>
+              <li><strong>Enemy Missing (❗):</strong> Drag to the minimap on the lane where the enemy disappeared. Do this EVERY TIME your lane opponent leaves. It's the single most helpful ping.</li>
+              <li><strong>Enemy Has Returned:</strong> Use when the missing enemy reappears. This tells your team it's safe again.</li>
+              <li><strong>On My Way:</strong> Ping the lane/objective you're rotating toward. Gives allies a heads-up before you arrive.</li>
+            </ul>
+          </div>
+          <div>
+            <h4 style="color:var(--accent-gold);">Command Pings</h4>
+            <ul>
+              <li><strong>Retreat (⛔):</strong> Ping on your allies (not enemies) to tell them to back off. More effective than typing "back" in chat.</li>
+              <li><strong>Gather / Attack:</strong> Ping an objective (Dragon, Tyrant, tower) to signal your team to group there. Double-ping for urgency.</li>
+              <li><strong>Ultimate Status:</strong> Hold and drag from the Ultimate button to show cooldown. Critical for coordinating engages.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-block" style="margin-top:1.5rem;">
+        <h3>💬 Quick Chat & Mental</h3>
+        <p style="color:var(--text-secondary);margin-bottom:1rem;">The quick chat wheel is faster than typing — customize it in settings with useful phrases like "Group for Dragon," "Wait for Ultimate," and "Split Push." As for typed chat...</p>
+        <div class="callout info">
+          <strong>💡 The 30-Second Rule</strong>
+          If you're typing for more than 5 seconds, you're not playing. If what you're typing is negative, it will lose you the game faster than any mechanical mistake. Mute toxic players instantly (scoreboard → mute button). Your mental is a resource — protect it.
+        </div>
+        <p style="color:var(--text-muted);margin-top:1rem;">The most effective communication in Honor of Kings is succinct and positive: "gj team", "group dragon 30s", "play safe till 4", "nice pick". Five words, one message, back to playing. That's the standard.</p>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>⚔ HOK Guide</h3>
+          <p>Your ultimate resource for Honor of Kings guides, tips, and strategies. Created by players, for players.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Guides</h4>
+          <ul>
+            <li><a href="heroes.html">Hero Guides</a></li>
+            <li><a href="tips.html">Tips & Tricks</a></li>
+            <li><a href="strategy.html">Strategy</a></li>
+            <li><a href="items.html">Item Builds</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="https://discord.gg/honorofkings" target="_blank" rel="noopener">Discord</a></li>
+            <li><a href="https://reddit.com/r/HonorOfKings" target="_blank" rel="noopener">Reddit</a></li>
+            <li><a href="https://youtube.com/@HonorOfKings" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="https://x.com/HonorOfKings" target="_blank" rel="noopener">Twitter / X</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>About</h4>
+          <ul>
+            <li><a href="index.html">About Us</a></li>
+            <li><a href="mailto:hello@honorofkingsguide.com">Contact</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 HOK QuickRef. Unofficial fan site. Honor of Kings is a trademark of Tencent / TiMi Studios.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">↑</button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

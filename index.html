@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HOK QuickRef — Unofficial community-driven Honor of Kings tips collection. Player-discovered tricks, builds, combos, and counters. No login, no ads, just player knowledge.">
+  <meta name="keywords" content="Honor of Kings, HOK guide, HOK tips, HOK community, player tips, Honor of Kings tricks, unofficial HOK guide">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="HOK QuickRef — Player-Discovered Tips & Tricks">
+  <meta property="og:description" content="Unofficial community tips collection. Player-discovered tricks, hero builds, and counter strategies.">
+  <meta property="og:type" content="website">
+  <title>HOK QuickRef — Unofficial Player Tips Collection</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon">⚔</div>
+        <span>HOK QuickRef</span><span class="unofficial-badge">unofficial</span>
+      </a>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="heroes.html">Heroes</a></li>
+        <li><a href="tips.html">Tips</a></li>
+        <li><a href="items.html">Items</a></li>
+        <li><a href="strategy.html">Strategy</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="home-hero">
+    <div class="container">
+      <h1>HOK QuickRef</h1>
+      <p class="subtitle">Unofficial community tips collection — player-discovered tricks, builds, and counter strategies. No ads, no login, just player knowledge.</p>
+
+      <!-- Big Search -->
+      <div class="search-hero">
+        <div class="search-input-wrap">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="heroSearch" placeholder="Search heroes... (e.g., Lu Bu, Angela, mage, Clash Lane, stun combo)" autocomplete="off">
+        </div>
+        <div class="search-results" id="searchResults"></div>
+      </div>
+
+      <!-- Quick Stats -->
+      <div class="home-stats">
+        <div class="home-stat"><div class="num">82</div><div class="lbl">Hero Guides</div></div>
+        <div class="home-stat"><div class="num">3</div><div class="lbl">Files Per Hero</div></div>
+        <div class="home-stat"><div class="num">6</div><div class="lbl">Roles Covered</div></div>
+        <div class="home-stat"><div class="num">246</div><div class="lbl">Total MD Files</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Links -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Quick Navigation</h2>
+        <p>Jump directly to what you need</p>
+      </div>
+      <div class="quick-links">
+        <a href="heroes.html" class="quick-link">
+          <span class="ql-icon">🦸</span>
+          <span class="ql-title">Hero Gallery</span>
+          <span class="ql-desc">Browse all 82 heroes by role</span>
+        </a>
+        <a href="tips.html" class="quick-link">
+          <span class="ql-icon">💡</span>
+          <span class="ql-title">Tips & Tech</span>
+          <span class="ql-desc">Settings, mechanics, combos</span>
+        </a>
+        <a href="items.html" class="quick-link">
+          <span class="ql-icon">⚔</span>
+          <span class="ql-title">Item Database</span>
+          <span class="ql-desc">Stats, passives, counter-builds</span>
+        </a>
+        <a href="strategy.html" class="quick-link">
+          <span class="ql-icon">🗺</span>
+          <span class="ql-title">Strategy Guide</span>
+          <span class="ql-desc">Map, rotations, objectives</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular Heroes -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-header">
+        <h2>Popular Heroes</h2>
+        <p>Top picks in the current meta</p>
+      </div>
+      <div class="hero-grid" id="popularHeroes">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>⚔ HOK QuickRef</h3>
+          <p><strong style="color:var(--gold);">⚠ Unofficial fan site.</strong> A collection of player-discovered tips, tricks, and strategies. Not affiliated with Tencent, TiMi Studios, or Level Infinite. All content contributed by the player community.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Browse</h4>
+          <ul>
+            <li><a href="heroes.html">Hero Gallery</a></li>
+            <li><a href="tips.html">Tips & Tech</a></li>
+            <li><a href="items.html">Items</a></li>
+            <li><a href="strategy.html">Strategy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="https://discord.gg/honorofkings" target="_blank" rel="noopener">Discord</a></li>
+            <li><a href="https://reddit.com/r/HonorOfKings" target="_blank" rel="noopener">Reddit</a></li>
+            <li><a href="https://github.com" target="_blank" rel="noopener">GitHub (Contribute)</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 HOK QuickRef. Unofficial fan site. Honor of Kings is a trademark of Tencent / TiMi Studios.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">↑</button>
+
+  <script>
+    // Populate popular heroes on homepage
+    fetch('data/heroes.json')
+      .then(r => r.json())
+      .then(data => {
+        const popular = ['lu-bu','lam','angela','daji','marco-polo','wukong','sun-ce','yaria','arthur','luna','diaochan','prince-of-lanling'];
+        const grid = document.getElementById('popularHeroes');
+        grid.innerHTML = popular.map(function(slug) {
+          var h = data.heroes.find(function(x){return x.slug === slug});
+          if (!h) return '';
+          var idAttr = h.image ? ' id="av-'+h.slug+'"' : '';
+          return '<div class="hero-card" onclick="location.href=\'hero.html?hero='+h.slug+'\'">'
+            + '<div class="hero-card-avatar '+h.roleKey+'"'+idAttr+'>'+h.emoji+'</div>'
+            + '<div class="hero-card-name">'+h.name+'</div>'
+            + '<div class="hero-card-role">'+h.role+'</div>'
+            + '</div>';
+        }).join('');
+
+        // Load avatars
+        popular.forEach(function(slug){
+          var h = data.heroes.find(function(x){return x.slug === slug});
+          if (!h || !h.image) return;
+          var img = new Image();
+          img.onload = function(){
+            var el = document.getElementById('av-'+h.slug);
+            if (el) { el.innerHTML = ''; el.appendChild(this); }
+          };
+          img.style.cssText = 'width:56px;height:56px;border-radius:50%;object-fit:cover';
+          img.src = h.image + '?v=2';
+        });
+      });
+  </script>
+  <script>
+// === Unified Search: Heroes + Items + Tips ===
+(function(){
+  var input = document.getElementById('heroSearch');
+  var results = document.getElementById('searchResults');
+  if (!input || !results) return;
+
+  var heroes = [], items = [], tipsList = [];
+
+  // Load all data
+  Promise.all([
+    fetch('data/heroes.json').then(function(r){return r.json()}),
+    fetch('data/items.json').then(function(r){return r.json()}),
+    fetch('data/items.json').then(function(){return {items:[]}}) // tips placeholder
+  ]).then(function(d){
+    heroes = d[0].heroes || [];
+    items = d[1].items || [];
+  });
+
+  var timer;
+  input.addEventListener('input', function(){
+    clearTimeout(timer);
+    timer = setTimeout(function(){
+      var q = input.value.trim().toLowerCase();
+      if (!q) { results.classList.remove('active'); return; }
+
+      var matches = [];
+
+      // Search heroes
+      heroes.forEach(function(h){
+        if (h.name.toLowerCase().indexOf(q) !== -1 || h.role.toLowerCase().indexOf(q) !== -1 || h.lane.toLowerCase().indexOf(q) !== -1)
+          matches.push({type:'hero', name:h.name, role:h.role, emoji:h.emoji, slug:h.slug, lane:h.lane, img:h.image||''});
+      });
+
+      // Search items
+      items.forEach(function(it){
+        if (it.name.toLowerCase().indexOf(q) !== -1 || it.type.toLowerCase().indexOf(q) !== -1 || (it.name_cn||'').indexOf(q) !== -1)
+          matches.push({type:'item', name:it.name, role:it.type, emoji:it.emoji||'📦', slug:it.slug, price:it.total_price, img:it.image||''});
+      });
+
+      if (matches.length === 0) {
+        results.innerHTML = '<div class="search-no-results">Nothing found — try a different search</div>';
+      } else {
+        results.innerHTML = matches.slice(0, 10).map(function(m){
+          var url = m.type === 'hero' ? 'hero.html?hero='+m.slug : 'items.html#'+m.slug;
+          var badge = m.type === 'hero' ? '<span style="font-size:0.6rem;background:var(--accent);color:#fff;padding:1px 5px;border-radius:3px">Hero</span>' : '<span style="font-size:0.6rem;background:var(--gold);color:#000;padding:1px 5px;border-radius:3px">Item</span>';
+          var sub = m.type === 'hero' ? m.role+' · '+m.lane : m.role+' · '+m.price+'g';
+          var avatarHtml = '<div class="search-result-emoji">';
+          if (m.img) {
+            avatarHtml += '<img src="'+m.img+'" width="40" height="40" style="border-radius:50%;object-fit:cover">';
+          } else {
+            avatarHtml += m.emoji;
+          }
+          avatarHtml += '</div>';
+          return '<div class="search-result-item" onclick="location.href=\''+url+'\'">'
+            + avatarHtml
+            + '<div class="search-result-info"><div class="search-result-name">'+m.name+' '+badge+'</div>'
+            + '<div class="search-result-role">'+sub+'</div></div></div>';
+        }).join('');
+      }
+      results.classList.add('active');
+    }, 200);
+  });
+
+  // Close on outside click
+  document.addEventListener('click', function(e){
+    if (!input.parentElement.contains(e.target)) results.classList.remove('active');
+  });
+
+  // Enter key → first result
+  input.addEventListener('keydown', function(e){
+    if (e.key === 'Enter' && results.classList.contains('active')){
+      var first = results.querySelector('.search-result-item');
+      if (first) first.click();
+    }
+  });
+
+  // Update placeholder
+  input.placeholder = 'Search heroes & items... (e.g., Lu Bu, Iron Sword, mage, Defense)';
+})();
+</script>
+</body>
+</html>
