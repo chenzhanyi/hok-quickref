@@ -13,7 +13,7 @@
     heroesDataUrl: 'data/heroes.json',
     heroesDir: 'heroes',
     tipsDir: 'tips',
-    markedCdn: 'https://cdn.jsdelivr.net/npm/marked/marked.min.js'
+    markedCdn: 'js/marked.min.js'
   };
 
   let heroesData = null;
