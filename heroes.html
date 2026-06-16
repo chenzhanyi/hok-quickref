@@ -139,19 +139,13 @@
         });
         grid.innerHTML = html;
 
-        // Now load avatar images for heroes that have them
+        // Now load avatar images — directly inject img tags
         heroes.forEach(function(h){
           if (!h.image) return;
-          var img = new Image();
-          img.onload = function(){
-            var el = document.getElementById('av-'+h.slug);
-            if (el) { el.innerHTML = ''; el.appendChild(this); }
-          };
-          // onerror: do nothing, emoji stays
-          img.style.cssText = 'width:56px;height:56px;border-radius:50%;object-fit:cover';
-          img.src = h.image + '?v=4';
-          img.alt = h.name + ' Honor of Kings hero portrait';
-          img.loading = 'lazy';
+          var el = document.getElementById('av-'+h.slug);
+          if (el) {
+            el.innerHTML = '<img src="'+h.image+'?v=5" width="56" height="56" style="border-radius:50%;object-fit:cover" alt="'+h.name+' Honor of Kings hero portrait" loading="lazy">';
+          }
         });
 
         // Filter handlers

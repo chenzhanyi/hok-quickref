@@ -193,19 +193,14 @@
             + '</div>';
         }).join('');
 
-        // Load avatars
+        // Load avatars — directly inject img tags (more reliable than new Image + onload)
         popular.forEach(function(slug){
           var h = data.heroes.find(function(x){return x.slug === slug});
           if (!h || !h.image) return;
-          var img = new Image();
-          img.onload = function(){
-            var el = document.getElementById('av-'+h.slug);
-            if (el) { el.innerHTML = ''; el.appendChild(this); }
-          };
-          img.style.cssText = 'width:56px;height:56px;border-radius:50%;object-fit:cover';
-          img.src = h.image + '?v=4';
-          img.alt = h.name + ' Honor of Kings hero portrait';
-          img.loading = 'lazy';
+          var el = document.getElementById('av-'+h.slug);
+          if (el) {
+            el.innerHTML = '<img src="'+h.image+'?v=5" width="56" height="56" style="border-radius:50%;object-fit:cover" alt="'+h.name+' Honor of Kings hero portrait" loading="lazy">';
+          }
         });
       });
   </script>
