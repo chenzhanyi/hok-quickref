@@ -74,41 +74,8 @@
 
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <h3>⚔ HOK QuickRef</h3>
-          <p><strong style="color:var(--gold);">⚠ Unofficial fan site.</strong> Player-discovered tips collection. Not affiliated with Tencent / TiMi.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Browse</h4>
-          <ul><li><a href="index.html">Home</a></li><li><a href="tips.html">Tips</a></li><li><a href="items.html">Items</a></li></ul>
-        </div>
-        <div class="footer-col">
-          <h4>Add Content</h4>
-          <ul><li><a href="#">GitHub</a></li><li><a href="#">How to Contribute</a></li></ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 HOK QuickRef. Unofficial fan site.</p>
-      </div>
-    </div>
-  </footer>
-
-  <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">↑</button>
-
-  <!-- Mobile menu + nav + scroll-top -->
-  <script>
-  (function(){
-    var b=document.getElementById('mobileMenuBtn'),n=document.getElementById('navLinks');
-    if(b&&n){b.addEventListener('click',function(){b.classList.toggle('active');n.classList.toggle('active');});n.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){b.classList.remove('active');n.classList.remove('active');});});document.addEventListener('click',function(e){if(!n.contains(e.target)&&!b.contains(e.target)){b.classList.remove('active');n.classList.remove('active');}});}
-    var nb=document.getElementById('navbar');if(nb)window.addEventListener('scroll',function(){nb.classList.toggle('scrolled',window.pageYOffset>50);},{passive:true});
-    var st=document.getElementById('scrollTopBtn');if(st){window.addEventListener('scroll',function(){st.classList.toggle('visible',window.pageYOffset>500);},{passive:true});st.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});}
-  })();
-  </script>
-
-  <!-- JSON-LD Structured Data -->
+  <footer class="footer"></footer>
+<!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -212,5 +179,6 @@
       }
     })();
   </script>
+  <script src="js/common.js"></script>
 </body>
 </html>
