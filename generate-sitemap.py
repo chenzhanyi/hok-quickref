@@ -20,7 +20,8 @@ STATIC_PAGES = [
     ("/",                  "1.0",  "daily"),
     ("/heroes.html",       "0.9",  "daily"),
     ("/items.html",        "0.8",  "weekly"),
-    ("/strategy.html",     "0.8",  "weekly"),
+    ("/strategy.html",       "0.8",  "weekly"),
+    ("/privacy.html",       "0.3",  "monthly"),
     ("/tips.html",         "0.7",  "weekly"),
 ]
 
