@@ -81,7 +81,7 @@ p { color:var(--text-secondary); margin-bottom:0.75rem; }
   padding:calc(var(--nav-h) + 3rem) 0 2rem;
   text-align:center;
   position:relative;
-  
+  overflow:hidden;
 }
 .home-hero::before {
   content:''; position:absolute; top:-40%; left:-40%; width:180%; height:180%;
