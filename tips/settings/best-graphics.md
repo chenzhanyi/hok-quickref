@@ -1,21 +1,24 @@
-# Best Graphics Settings for Performance
+# Best Graphics & Performance Settings
 
-## For Competitive Play (Max FPS)
-- **Frame Rate:** High (60 FPS) — this is non-negotiable for competitive play
-- **Graphics Quality:** Smooth or Medium — lower settings reduce visual clutter
-- **Resolution:** High — don't compromise on resolution, you need to see enemies clearly
-- **Shadow Quality:** Off or Low — shadows add no competitive advantage
-- **Particle Quality:** Low — reduces ability effect clutter in teamfights
-- **Outlines:** On — makes enemy heroes easier to see in chaotic fights
-- **Camera Height:** High — gives you more vision of the map
+## Frame Rate & Display
+- **FPS:** Set to **High** or **Ultra** (90/120 FPS if available). This is non-negotiable — higher frame rate = lower input lag = faster reaction time.
+- **Resolution:** Keep at **High**. Never compromise resolution — you need pixel-level clarity to spot enemies at the edge of bushes.
+- **UI Animations:** Turn **OFF**. Menu transition effects consume unnecessary memory and can cause micro-stutters during teamfights on some Android devices.
+- **Anti-Aliasing:** Turn **ON**. Eliminates flickering and jagged edges on hero model outlines, helping you spot enemies peeking from behind terrain or brush edges.
 
-## Device-Specific Tips
+## Visual Clarity vs Performance
+- **Shadow Quality:** Off or Low — shadows provide zero competitive advantage.
+- **Particle Quality:** Low — reduces ability effect visual clutter in 5v5 teamfights so you can actually see CC and skillshots.
+- **Outlines:** On — makes enemy hero silhouettes pop against any background.
+- **Camera Height:** High — expands your field of view for better map awareness.
+
+## Network: Multipath Connection
+Enable **Multipath Connection** in network settings. This simultaneously uses both Wi-Fi and cellular data to transmit game packets — the single most effective setting for preventing 460ms ping spikes during cross-region play.
+
+## Device-Specific
 | Device | Recommendation |
 |--------|---------------|
-| iPhone 14/15 Pro | High graphics, 60 FPS |
-| Mid-range Android | Medium graphics, 60 FPS |
-| Older devices | Smooth graphics, 30 FPS |
-| iPad/Tablet | High graphics, adjust camera |
-
-## Why These Settings
-Reducing particle effects makes it easier to see CC abilities and dodge skillshots. High FPS reduces input lag — critical for last-hitting and reaction plays.
+| iPhone 14/15/16 Pro | High graphics, Ultra FPS |
+| Mid-range Android | Medium graphics, High FPS |
+| Older devices | Smooth graphics, 60 FPS |
+| iPad/Tablet | High graphics, adjust camera height |

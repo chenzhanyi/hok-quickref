@@ -342,14 +342,16 @@
     // Known tip files per category
     const tipFiles = {
       settings: [
-        { file: 'best-graphics.md', title: 'Best Graphics Settings', desc: 'Maximize FPS and visibility for competitive play' },
-        { file: 'control-layout.md', title: 'Control Layout Guide', desc: 'Optimal button placement and settings for each role' }
+        { file: 'best-graphics.md', title: 'Best Graphics & FPS Settings', desc: 'Ultra FPS, anti-aliasing, multipath connection, and pro graphics setup' },
+        { file: 'control-layout.md', title: 'Pro Control & Layout Guide', desc: 'Advanced target lock, close-range chase, fixed wheel, joystick, button layout' },
+        { file: 'auto-translate.md', title: 'Auto-Translate In-Match Chat', desc: 'Break the language barrier with real-time chat translation on global server' }
       ],
       gameplay: [
         { file: 'last-hitting.md', title: 'Last-Hitting Masterclass', desc: 'Never miss a minion — lane farming, tower farming, practice routines' },
         { file: 'wave-management.md', title: 'Wave Management Guide', desc: 'Freeze, slow push, fast push — master all three wave states' },
         { file: 'rotations.md', title: 'Rotation Guide', desc: 'When to rotate, when to stay, and the 4-man dive pattern' },
-        { file: 'vision.md', title: 'Vision & Map Awareness', desc: 'Ward timing, placement, and reading the minimap' }
+        { file: 'vision.md', title: 'Vision & Map Awareness', desc: 'Ward timing, placement, and reading the minimap' },
+        { file: 'anti-heal-items.md', title: 'Anti-Heal Items Guide', desc: 'The 3 must-build items to shut down healing heroes — every role covered' }
       ],
       'hero-tech': [
         { file: 'animation-canceling.md', title: 'Animation Canceling', desc: 'Cancel recovery frames to increase DPS and fluidity' },
