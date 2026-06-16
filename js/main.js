@@ -100,57 +100,11 @@
     );
   }
 
-  // ============================================================
-  // 1. MOBILE MENU
-  // ============================================================
-  function initMobileMenu() {
-    const btn = document.getElementById('mobileMenuBtn');
-    const nav = document.getElementById('navLinks');
-    if (!btn || !nav) return;
-    btn.addEventListener('click', () => {
-      btn.classList.toggle('active');
-      nav.classList.toggle('active');
-    });
-    nav.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        btn.classList.remove('active');
-        nav.classList.remove('active');
-      });
-    });
-    document.addEventListener('click', (e) => {
-      if (!nav.contains(e.target) && !btn.contains(e.target)) {
-        btn.classList.remove('active');
-        nav.classList.remove('active');
-      }
-    });
-  }
+  // NOTE: Mobile menu, nav scroll, and scroll-top are now handled
+  // by inline scripts in each page — no duplicate handlers needed.
 
   // ============================================================
-  // 2. NAVBAR SCROLL
-  // ============================================================
-  function initNavScroll() {
-    const navbar = document.getElementById('navbar');
-    if (!navbar) return;
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 50) navbar.classList.add('scrolled');
-      else navbar.classList.remove('scrolled');
-    }, { passive: true });
-  }
-
-  // ============================================================
-  // 3. SCROLL TO TOP
-  // ============================================================
-  function initScrollTop() {
-    const btn = document.getElementById('scrollTopBtn');
-    if (!btn) return;
-    window.addEventListener('scroll', () => {
-      btn.classList.toggle('visible', window.pageYOffset > 500);
-    }, { passive: true });
-    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-  }
-
-  // ============================================================
-  // 4. HOMEPAGE SEARCH
+  // 1. HOMEPAGE SEARCH
   // ============================================================
   function initHomeSearch() {
     const input = document.getElementById('heroSearch');
@@ -433,9 +387,7 @@
   // 8. INIT
   // ============================================================
   function init() {
-    initMobileMenu();
-    initNavScroll();
-    initScrollTop();
+    // Mobile menu, nav scroll, scroll-top → handled by inline scripts
     initHomeSearch();
     initHeroGallery();
     initHeroDetail();
