@@ -29,7 +29,7 @@
     '      <ul>' +
     '        <li><a href="https://discord.gg/honorofkings" target="_blank" rel="noopener">Discord</a></li>' +
     '        <li><a href="https://reddit.com/r/HonorOfKings" target="_blank" rel="noopener">Reddit</a></li>' +
-    '        <li><a href="https://github.com" target="_blank" rel="noopener">GitHub (Contribute)</a></li>' +
+    '        <li><a href="https://github.com/chenzhanyi/hok-quickref" target="_blank" rel="noopener">GitHub (Contribute)</a></li>' +
     '      </ul>' +
     '    </div>' +
     '  </div>' +
