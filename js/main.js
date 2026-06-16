@@ -348,7 +348,8 @@
   function initTipsBrowser() {
     const container = document.getElementById('tipsContent');
     if (!container) return;
-    loadMarked().then(() => loadTipsIndex());
+    // Render categories immediately — marked.js only needed when viewing a tip
+    loadTipsIndex();
   }
 
   async function loadTipsIndex() {
@@ -416,6 +417,7 @@
 
     list.querySelectorAll('.tips-list-item').forEach(item => {
       item.addEventListener('click', async () => {
+        await loadMarked(); // Load marked.js on demand when viewing a tip
         const md = await loadMdFile(`${CONFIG.tipsDir}/${item.dataset.file}`);
         detail.innerHTML = `
           <button class="back-btn" onclick="location.reload()">← Back</button>
