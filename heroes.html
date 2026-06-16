@@ -98,6 +98,16 @@
 
   <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">↑</button>
 
+  <!-- Mobile menu + nav + scroll-top -->
+  <script>
+  (function(){
+    var b=document.getElementById('mobileMenuBtn'),n=document.getElementById('navLinks');
+    if(b&&n){b.addEventListener('click',function(){b.classList.toggle('active');n.classList.toggle('active');});n.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){b.classList.remove('active');n.classList.remove('active');});});document.addEventListener('click',function(e){if(!n.contains(e.target)&&!b.contains(e.target)){b.classList.remove('active');n.classList.remove('active');}});}
+    var nb=document.getElementById('navbar');if(nb)window.addEventListener('scroll',function(){nb.classList.toggle('scrolled',window.pageYOffset>50);},{passive:true});
+    var st=document.getElementById('scrollTopBtn');if(st){window.addEventListener('scroll',function(){st.classList.toggle('visible',window.pageYOffset>500);},{passive:true});st.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});}
+  })();
+  </script>
+
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
