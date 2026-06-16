@@ -2,15 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8503682070443918" crossorigin="anonymous"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="HOK QuickRef — Unofficial community-driven Honor of Kings tips collection. Player-discovered tricks, builds, combos, and counters. No login, no ads, just player knowledge.">
-  <meta name="keywords" content="Honor of Kings, HOK guide, HOK tips, HOK community, player tips, Honor of Kings tricks, unofficial HOK guide">
+
+  <!-- Primary Meta -->
+  <title>HOK QuickRef — Honor of Kings Tips, Builds & Strategy Guides (126 Heroes)</title>
+  <meta name="description" content="Comprehensive Honor of Kings guide hub: 126 hero builds, arcana setups, counter strategies, item database, and macro play guides. Player-driven tips — no login required.">
+  <meta name="keywords" content="Honor of Kings, HOK guide, HOK tips, HOK builds, Honor of Kings heroes, HOK strategy, HOK item database, HOK counters, HOK arcana, HOK combo guide">
   <meta name="robots" content="index, follow">
-  <meta property="og:title" content="HOK QuickRef — Player-Discovered Tips & Tricks">
-  <meta property="og:description" content="Unofficial community tips collection. Player-discovered tricks, hero builds, and counter strategies.">
+  <link rel="canonical" href="https://hokquickref.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="HOK QuickRef — Honor of Kings Tips, Builds & Strategy Guides">
+  <meta property="og:description" content="Comprehensive Honor of Kings guide hub: 126 hero builds, arcana setups, counter strategies, and macro play guides. 100% free, no login.">
   <meta property="og:type" content="website">
-  <title>HOK QuickRef — Unofficial Player Tips Collection</title>
+  <meta property="og:url" content="https://hokquickref.com/">
+  <meta property="og:site_name" content="HOK QuickRef">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HOK QuickRef — Honor of Kings Tips, Builds & Strategy Guides">
+  <meta name="twitter:description" content="126 hero builds, arcana setups, counter strategies, item database, and macro play guides — all free, no login.">
+  <meta name="twitter:site" content="@HonorOfKings">
+
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="en" href="https://hokquickref.com/">
+  <link rel="alternate" hreflang="x-default" href="https://hokquickref.com/">
+
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,6 +58,7 @@
     </div>
   </nav>
 
+  <main>
   <!-- Hero Section -->
   <section class="home-hero">
     <div class="container">
@@ -108,6 +129,8 @@
     </div>
   </section>
 
+  </main>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
@@ -142,6 +165,40 @@
 
   <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">↑</button>
 
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://hokquickref.com/#website",
+        "url": "https://hokquickref.com/",
+        "name": "HOK QuickRef",
+        "description": "Comprehensive Honor of Kings guide hub with 126 hero builds, arcana setups, counter strategies, item database, and macro play guides.",
+        "inLanguage": "en",
+        "publisher": {
+          "@type": "Organization",
+          "name": "HOK QuickRef",
+          "url": "https://hokquickref.com/"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://hokquickref.com/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://hokquickref.com/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
   <script>
     // Populate popular heroes on homepage
     fetch('data/heroes.json')
@@ -174,6 +231,8 @@
           };
           img.style.cssText = 'width:56px;height:56px;border-radius:50%;object-fit:cover';
           img.src = h.image + '?v=2';
+          img.alt = h.name + ' Honor of Kings hero portrait';
+          img.loading = 'lazy';
         });
       });
   </script>
@@ -226,7 +285,7 @@
           var sub = m.type === 'hero' ? m.role+' · '+m.lane : m.role+' · '+m.price+'g';
           var avatarHtml = '<div class="search-result-emoji">';
           if (m.img) {
-            avatarHtml += '<img src="'+m.img+'" width="40" height="40" style="border-radius:50%;object-fit:cover">';
+            avatarHtml += '<img src="'+m.img+'" width="40" height="40" style="border-radius:50%;object-fit:cover" alt="'+m.name+' portrait" loading="lazy">';
           } else {
             avatarHtml += m.emoji;
           }

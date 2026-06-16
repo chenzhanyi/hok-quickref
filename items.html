@@ -1,10 +1,34 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
+  <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8503682070443918" crossorigin="anonymous"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Items — HOK QuickRef</title>
+
+  <!-- Primary Meta -->
+  <title>Item Database · 道具数据库 — Honor of Kings Items, Stats & Passives | HOK QuickRef</title>
+  <meta name="description" content="Complete Honor of Kings item database with 115+ items. Official CN stats with English translations — Physical, Magic, Defense, Movement, Jungling, and Support items.">
+  <meta name="keywords" content="Honor of Kings items, HOK items, HOK item database, Honor of Kings equipment, HOK item stats, HOK item passives, HOK physical items, HOK magic items">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://hokquickref.com/items.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Item Database · 道具数据库 — Honor of Kings Items, Stats & Passives">
+  <meta property="og:description" content="Complete HOK item database: 115+ items with official CN stats and English translations. Physical, Magic, Defense, Movement, Jungling, and Support items.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hokquickref.com/items.html">
+  <meta property="og:site_name" content="HOK QuickRef">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HOK Item Database — 115+ Items with Stats & Passive Effects">
+  <meta name="twitter:description" content="Complete HOK item database: official CN stats with English translations. All item types and effects.">
+
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="en" href="https://hokquickref.com/items.html">
+  <link rel="alternate" hreflang="x-default" href="https://hokquickref.com/items.html">
+
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,12 +67,15 @@
 
   <div class="breadcrumb"><div class="container"><a href="index.html">Home</a><span>/</span><strong>Items</strong></div></div>
 
+  <main>
   <section class="section" style="padding-top:1.5rem">
     <div class="container">
       <div class="section-header"><h1>Item Database · 道具数据库</h1><p>115 items with official CN stats &amp; English translations. Click any item for details.</p></div>
       <div id="app"></div>
     </div>
   </section>
+
+  </main>
 
   <footer class="footer"><div class="container">
     <div class="footer-grid">
@@ -58,6 +85,49 @@
     <div class="footer-bottom"><p>&copy; 2025 HOK QuickRef. Unofficial fan site.</p></div>
   </div></footer>
   <button class="scroll-top" id="scrollTopBtn">↑</button>
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "https://hokquickref.com/items.html#page",
+        "url": "https://hokquickref.com/items.html",
+        "name": "Honor of Kings Item Database · 道具数据库",
+        "description": "Complete Honor of Kings item database with 115+ items. Official CN stats with English translations — Physical, Magic, Defense, Movement, Jungling, and Support items.",
+        "about": {
+          "@type": "VideoGame",
+          "name": "Honor of Kings",
+          "gamePlatform": ["Mobile"],
+          "genre": ["MOBA"]
+        },
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://hokquickref.com/#website"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://hokquickref.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Items",
+            "item": "https://hokquickref.com/items.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 
   <script>
     (function(){
@@ -105,7 +175,7 @@
         var effectEn = item.des2_en||'';
         var effectCn = item.des2_cn||'';
 
-        var imgTag = item.image ? '<img src="'+item.image+'" style="width:64px;height:64px;border-radius:8px;margin-bottom:0.75rem;object-fit:contain" onerror="this.remove()">' : '';
+        var imgTag = item.image ? '<img src="'+item.image+'" alt="'+item.name+' Honor of Kings item icon" style="width:64px;height:64px;border-radius:8px;margin-bottom:0.75rem;object-fit:contain" loading="lazy" onerror="this.remove()">' : '';
         detail.innerHTML =
           '<span class="item-detail-back" onclick="document.getElementById(\'itemDetail\').classList.remove(\'show\');history.replaceState(null,null,window.location.pathname);window.scrollTo({top:0})">← Back to items</span>'
           + '<div class="item-detail-card">'
@@ -148,7 +218,7 @@
         filtered.forEach(function(item){
           var stats = item.des1_en || '';
           var effect = item.des2_en || '';
-          var img = item.image ? '<img src="'+item.image+'" style="width:44px;height:44px;border-radius:6px;object-fit:contain" loading="lazy" onerror="this.style.display=\'none\'">' : '';
+          var img = item.image ? '<img src="'+item.image+'" alt="'+item.name+' Honor of Kings item icon" style="width:44px;height:44px;border-radius:6px;object-fit:contain" loading="lazy" onerror="this.style.display=\'none\'">' : '';
           html += '<div class="item-card" data-slug="'+item.slug+'">'
             + (img ? '<div style="display:flex;align-items:center;gap:0.5rem">'+img+'<div style="flex:1;min-width:0"><div class="item-card-name">'+item.name+'</div><div class="item-card-name" style="font-size:0.72rem;color:var(--text-muted);font-weight:400">'+item.name_cn+'</div></div></div>' : '<div><div class="item-card-name">'+item.name+'</div><div class="item-card-name" style="font-size:0.72rem;color:var(--text-muted);font-weight:400">'+item.name_cn+'</div></div>')
             + '<div style="display:flex;justify-content:space-between;align-items:center;margin-top:0.15rem"><span class="item-card-type">'+item.type+'</span><span class="item-card-price">'+item.total_price+'g</span></div>'

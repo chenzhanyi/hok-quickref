@@ -1,0 +1,11 @@
+# HOK QuickRef — hokquickref.com
+# Robots exclusion standard: https://www.robotstxt.org/
+
+User-agent: *
+Allow: /
+Disallow: /data/
+Disallow: /.git/
+Disallow: /.claude/
+
+# Sitemap location
+Sitemap: https://hokquickref.com/sitemap.xml

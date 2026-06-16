@@ -2,11 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8503682070443918" crossorigin="anonymous"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Browse all Honor of Kings heroes — filter by role, see difficulty, and click for detailed guides.">
+
+  <!-- Primary Meta -->
+  <title>All 126 Heroes — HOK QuickRef | Honor of Kings Hero Gallery</title>
+  <meta name="description" content="Browse all 126 Honor of Kings heroes — filter by Tank, Fighter, Assassin, Mage, Marksman, and Support roles. Click any hero for detailed builds, arcana guides, combo tips, and counter strategies.">
+  <meta name="keywords" content="Honor of Kings heroes, HOK hero list, HOK hero gallery, Honor of Kings all heroes, HOK tank, HOK mage, HOK marksman, HOK assassin">
   <meta name="robots" content="index, follow">
-  <title>Hero Gallery — HOK QuickRef</title>
+  <link rel="canonical" href="https://hokquickref.com/heroes.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="All 126 Heroes — HOK QuickRef | Honor of Kings Hero Gallery">
+  <meta property="og:description" content="Browse all 126 Honor of Kings heroes by role. Detailed guides with builds, arcana, combos, and counter strategies for every hero.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hokquickref.com/heroes.html">
+  <meta property="og:site_name" content="HOK QuickRef">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="All 126 Heroes — HOK QuickRef | Honor of Kings Hero Gallery">
+  <meta name="twitter:description" content="Browse all 126 Honor of Kings heroes by role. Builds, arcana, combos, and counter strategies.">
+
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="en" href="https://hokquickref.com/heroes.html">
+  <link rel="alternate" hreflang="x-default" href="https://hokquickref.com/heroes.html">
+
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,6 +59,7 @@
     <div class="container"><a href="index.html">Home</a><span>/</span><strong>Heroes</strong></div>
   </div>
 
+  <main>
   <section class="section" style="padding-top:1.5rem;">
     <div class="container">
       <div class="section-header">
@@ -47,6 +70,8 @@
       <div class="hero-grid" id="heroGrid"></div>
     </div>
   </section>
+
+  </main>
 
   <footer class="footer">
     <div class="container">
@@ -71,6 +96,44 @@
   </footer>
 
   <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">↑</button>
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "https://hokquickref.com/heroes.html#page",
+        "url": "https://hokquickref.com/heroes.html",
+        "name": "Honor of Kings Hero Gallery — All 126 Heroes",
+        "description": "Browse all 126 Honor of Kings heroes by role. Filter by Tank, Fighter, Assassin, Mage, Marksman, and Support.",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://hokquickref.com/#website"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://hokquickref.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Heroes",
+            "item": "https://hokquickref.com/heroes.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
   <script>
     // === HERO GALLERY — renders cards, then loads avatars ===
     (function(){
@@ -108,7 +171,8 @@
           // onerror: do nothing, emoji stays
           img.style.cssText = 'width:56px;height:56px;border-radius:50%;object-fit:cover';
           img.src = h.image + '?v=2';
-          img.alt = h.name;
+          img.alt = h.name + ' Honor of Kings hero portrait';
+          img.loading = 'lazy';
         });
 
         // Filter handlers

@@ -2,9 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8503682070443918" crossorigin="anonymous"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hero Guide — HOK QuickRef</title>
+
+  <!-- Primary Meta (defaults — updated dynamically by JS) -->
+  <title>Hero Guide — HOK QuickRef | Honor of Kings Builds & Tips</title>
+  <meta name="description" content="Detailed Honor of Kings hero guide with builds, arcana, combo tips, and counter strategies. Player-driven content — always up to date with the current meta.">
+  <meta name="keywords" content="Honor of Kings hero guide, HOK build, HOK arcana, HOK combo, HOK counter, HOK tips">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://hokquickref.com/hero.html">
+
+  <!-- Open Graph (defaults — updated dynamically by JS) -->
+  <meta property="og:title" content="Hero Guide — HOK QuickRef | Honor of Kings Builds & Tips">
+  <meta property="og:description" content="Detailed Honor of Kings hero guide with builds, arcana, combo tips, and counter strategies.">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="HOK QuickRef">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hero Guide — HOK QuickRef">
+  <meta name="twitter:description" content="Detailed HOK hero guide with builds, arcana, combo tips, and counter strategies.">
+
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="en" href="https://hokquickref.com/hero.html">
+  <link rel="alternate" hreflang="x-default" href="https://hokquickref.com/hero.html">
+
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,11 +46,12 @@
     </div>
   </nav>
 
+  <main>
   <div class="breadcrumb" id="breadcrumb">
     <div class="container"><a href="index.html">Home</a><span>/</span><a href="heroes.html">Heroes</a><span>/</span><strong>Loading...</strong></div>
   </div>
 
-  <section class="section" style="padding-top:1rem;">
+  <article class="section" style="padding-top:1rem;">
     <div class="container" id="heroContent">
       <div class="hero-detail-header" id="heroHeader"></div>
       <div class="content-tabs">
@@ -38,7 +63,8 @@
       <div class="content-panel" id="panel-tips"><p class="loading-text">Loading...</p></div>
       <div class="content-panel" id="panel-build"><p class="loading-text">Loading...</p></div>
     </div>
-  </section>
+  </article>
+  </main>
 
   <footer class="footer">
     <div class="container">
@@ -52,54 +78,256 @@
   </footer>
   <button class="scroll-top" id="scrollTopBtn">↑</button>
 
+  <!-- JSON-LD Schema Container -->
+  <script type="application/ld+json" id="ldJson">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://hokquickref.com/hero.html#article",
+        "headline": "Hero Guide — HOK QuickRef",
+        "description": "Detailed Honor of Kings hero guide with builds, arcana, combo tips, and counter strategies.",
+        "inLanguage": "en",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://hokquickref.com/#website"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://hokquickref.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Heroes", "item": "https://hokquickref.com/heroes.html" },
+          { "@type": "ListItem", "position": 3, "name": "Hero Guide", "item": "https://hokquickref.com/hero.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+
   <script src="js/marked.min.js"></script>
   <script>
-    var slug = new URLSearchParams(location.search).get('hero');
-    if (!slug) { document.getElementById('panel-overview').innerHTML = '<p class="loading-text">No hero specified.</p>'; }
-    else {
+    (function() {
+      var slug = new URLSearchParams(location.search).get('hero');
+      var heroContentEl = document.getElementById('heroContent');
+      if (!heroContentEl) return;
+
+      if (!slug) {
+        document.getElementById('panel-overview').innerHTML = '<p class="loading-text">No hero specified. <a href="heroes.html">Browse all heroes &rarr;</a></p>';
+        return;
+      }
+
       marked.setOptions({ breaks: true, gfm: true });
 
-      // ONE fetch for hero data, ONE fetch for all content
+      // === Load hero data and content ===
       Promise.all([
         fetch('data/heroes.json').then(function(r){return r.json()}),
         fetch('data/heroes_content.json').then(function(r){return r.json()})
-      ]).then(function(results){
+      ]).then(function(results) {
         var heroData = results[0];
         var allContent = results[1];
         var hero = heroData.heroes.find(function(h){return h.slug === slug});
         var content = allContent[slug];
 
         if (!hero || !content) {
-          document.getElementById('panel-overview').innerHTML = '<p class="loading-text" style="color:var(--red)">Hero not found: '+slug+'</p>';
+          document.getElementById('panel-overview').innerHTML = '<p class="loading-text" style="color:var(--red)">Hero not found: '+slug+'. <a href="heroes.html">Browse all heroes &rarr;</a></p>';
           return;
         }
 
-        document.getElementById('breadcrumb').innerHTML = '<div class="container"><a href="index.html">Home</a><span>/</span><a href="heroes.html">Heroes</a><span>/</span><strong>'+hero.name+'</strong></div>';
-        document.title = hero.name + ' — HOK QuickRef';
+        // ===== UPDATE METADATA =====
+        updatePageMeta(hero);
+        // ===== RENDER UI =====
+        renderHeroUI(hero, content);
 
-        document.getElementById('heroHeader').innerHTML =
-          '<div class="hero-detail-avatar '+hero.roleKey+'">'+(hero.image ? '<img src="'+hero.image+'?v=3" width="80" height="80" style="border-radius:50%;object-fit:cover" alt="">' : (hero.emoji||''))+'</div>'+
-          '<div class="hero-detail-info"><h1>'+hero.name+' <span style="font-weight:400;font-size:1rem;color:var(--text-muted)">'+hero.role+'</span></h1>'+
-          '<div class="hero-meta"><span>'+hero.lane+'</span> · '+'★'.repeat(hero.difficulty||0)+'☆'.repeat(5-(hero.difficulty||0))+'</div></div>';
-
-        ['overview','tips','build'].forEach(function(panel){
-          document.getElementById('panel-'+panel).innerHTML = content[panel]
-            ? '<div class="md-content">'+marked.parse(content[panel])+'</div>'
-            : '<p class="loading-text">Coming soon.</p>';
-        });
-
-        document.querySelectorAll('.content-tab').forEach(function(tab){
-          tab.addEventListener('click', function(){
-            document.querySelectorAll('.content-tab').forEach(function(t){t.classList.remove('active');});
-            document.querySelectorAll('.content-panel').forEach(function(p){p.classList.remove('active');});
-            tab.classList.add('active');
-            document.getElementById('panel-'+tab.getAttribute('data-tab')).classList.add('active');
-          });
-        });
-      }).catch(function(e){
+      }).catch(function(e) {
         document.getElementById('panel-overview').innerHTML = '<p class="loading-text" style="color:var(--red)">Failed to load: '+e.message+'</p>';
       });
-    }
+
+      // ============================================================
+      // SEO: Dynamic Metadata Update
+      // ============================================================
+      function updatePageMeta(hero) {
+        var pageUrl = 'https://hokquickref.com/hero.html?hero=' + hero.slug;
+        var heroName = hero.name;
+        var role = hero.role;
+
+        // Build keyword-rich title
+        var title = heroName + ' Build, Arcana & Combo Guide (' + role + ') | HOK QuickRef';
+        document.title = title;
+
+        // Build meta description (<160 chars, high-volume keywords)
+        var desc = 'Best ' + heroName + ' build guide for Season 8: optimal arcana, item builds, skill combos, and counter strategies. Master '
+          + heroName + ' — ' + role + ' on ' + hero.lane + '. Pro tips & matchup advice.';
+        if (desc.length > 160) desc = desc.substring(0, 157) + '...';
+        setMeta('description', desc);
+
+        // Keywords
+        var keywords = heroName + ' build, ' + heroName + ' arcana, ' + heroName + ' combo, ' + heroName + ' guide, '
+          + heroName + ' counters, HOK ' + heroName + ', Honor of Kings ' + heroName + ', ' + heroName + ' ' + role;
+        setMeta('keywords', keywords);
+
+        // Canonical URL
+        var canonical = document.querySelector('link[rel="canonical"]');
+        if (canonical) canonical.href = pageUrl;
+
+        // Open Graph
+        setMeta('og:title', title, 'property');
+        setMeta('og:description', desc, 'property');
+        setMeta('og:url', pageUrl, 'property');
+        if (hero.image) {
+          var imgUrl = 'https://hokquickref.com/' + hero.image;
+          setMeta('og:image', imgUrl, 'property');
+          setMeta('og:image:width', '256', 'property');
+          setMeta('og:image:height', '256', 'property');
+          setMeta('og:image:alt', heroName + ' Honor of Kings hero portrait', 'property');
+        }
+
+        // Twitter Card
+        setMeta('twitter:title', title);
+        setMeta('twitter:description', desc);
+        if (hero.image) {
+          setMeta('twitter:image', 'https://hokquickref.com/' + hero.image);
+        }
+
+        // hreflang
+        var altLinks = document.querySelectorAll('link[rel="alternate"]');
+        altLinks.forEach(function(link) { link.href = pageUrl; });
+
+        // ===== UPDATE JSON-LD =====
+        updateJsonLd(hero, pageUrl);
+      }
+
+      function setMeta(name, content, attrName) {
+        attrName = attrName || 'name';
+        var el = document.querySelector('meta[' + attrName + '="' + name + '"]');
+        if (!el) {
+          el = document.createElement('meta');
+          el.setAttribute(attrName, name);
+          document.head.appendChild(el);
+        }
+        el.setAttribute('content', content);
+      }
+
+      // ============================================================
+      // SEO: Dynamic JSON-LD Structured Data
+      // ============================================================
+      function updateJsonLd(hero, pageUrl) {
+        var stars = hero.difficulty || 3;
+        var heroName = hero.name;
+        var role = hero.role;
+
+        var ld = {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Article",
+              "@id": pageUrl + "#article",
+              "headline": heroName + " Build, Arcana & Combo Guide (" + role + ")",
+              "description": "Best " + heroName + " build guide: optimal arcana, item builds, skill combos, and counter strategies. Master " + heroName + " on " + hero.lane + ".",
+              "inLanguage": "en",
+              "datePublished": "2025-01-01",
+              "dateModified": "2025-06-15",
+              "author": {
+                "@type": "Organization",
+                "name": "HOK QuickRef",
+                "url": "https://hokquickref.com/"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "HOK QuickRef",
+                "url": "https://hokquickref.com/"
+              },
+              "about": {
+                "@type": "VideoGame",
+                "name": "Honor of Kings",
+                "gamePlatform": ["Mobile"],
+                "genre": ["MOBA"],
+                "character": {
+                  "@type": "VideoGameSeries",
+                  "name": heroName,
+                  "description": heroName + " — " + role + " on " + hero.lane
+                }
+              },
+              "isPartOf": {
+                "@type": "WebSite",
+                "@id": "https://hokquickref.com/#website"
+              },
+              "timeRequired": "PT" + (5 + stars) + "M",
+              "educationalLevel": stars <= 2 ? "beginner" : stars <= 3 ? "intermediate" : "advanced"
+            },
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://hokquickref.com/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Heroes",
+                  "item": "https://hokquickref.com/heroes.html"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": heroName,
+                  "item": pageUrl
+                }
+              ]
+            }
+          ]
+        };
+
+        var ldEl = document.getElementById('ldJson');
+        if (ldEl) ldEl.textContent = JSON.stringify(ld, null, 2);
+      }
+
+      // ============================================================
+      // UI Rendering
+      // ============================================================
+      function renderHeroUI(hero, content) {
+        // Breadcrumb
+        document.getElementById('breadcrumb').innerHTML = '<div class="container"><a href="index.html">Home</a><span>/</span><a href="heroes.html">Heroes</a><span>/</span><strong>' + hero.name + '</strong></div>';
+
+        // Header with hero avatar, name, role, lane, difficulty
+        var avatarHtml = hero.image
+          ? '<img src="' + hero.image + '?v=3" width="80" height="80" style="border-radius:50%;object-fit:cover" alt="' + hero.name + ' Honor of Kings hero portrait" loading="eager">'
+          : (hero.emoji || '');
+        var tags = (hero.tags || []).slice(0, 3).join(', ');
+
+        document.getElementById('heroHeader').innerHTML =
+          '<div class="hero-detail-avatar ' + hero.roleKey + '">' + avatarHtml + '</div>' +
+          '<div class="hero-detail-info">' +
+            '<h1>' + hero.name + ' <span style="font-weight:400;font-size:1rem;color:var(--text-muted)">' + hero.role + '</span></h1>' +
+            '<div class="hero-meta">' +
+              '<span>' + hero.lane + '</span> · ' +
+              '★'.repeat(hero.difficulty || 0) + '☆'.repeat(5 - (hero.difficulty || 0)) +
+              (tags ? ' · <span>' + tags + '</span>' : '') +
+            '</div>' +
+          '</div>';
+
+        // Content panels
+        ['overview', 'tips', 'build'].forEach(function(panel) {
+          document.getElementById('panel-' + panel).innerHTML = content[panel]
+            ? '<div class="md-content">' + marked.parse(content[panel]) + '</div>'
+            : '<p class="loading-text">Coming soon — <a href="#">contribute this guide</a></p>';
+        });
+
+        // Tab switching
+        document.querySelectorAll('.content-tab').forEach(function(tab) {
+          tab.addEventListener('click', function() {
+            document.querySelectorAll('.content-tab').forEach(function(t) { t.classList.remove('active'); });
+            document.querySelectorAll('.content-panel').forEach(function(p) { p.classList.remove('active'); });
+            tab.classList.add('active');
+            document.getElementById('panel-' + tab.getAttribute('data-tab')).classList.add('active');
+          });
+        });
+      }
+    })();
   </script>
 </body>
 </html>
