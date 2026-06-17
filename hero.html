@@ -308,7 +308,7 @@
         ['overview', 'tips', 'build'].forEach(function(panel) {
           document.getElementById('panel-' + panel).innerHTML = content[panel]
             ? '<div class="md-content">' + marked.parse(content[panel]) + '</div>'
-            : '<p class="loading-text">Coming soon — <a href="#">contribute this guide</a></p>';
+            : '<p class="loading-text">Coming soon — <a href="mailto:bpsgp10086@gmail.com?subject=%5BHOK+Guide%5D+' + encodeURIComponent(hero.name) + '+' + panel + '">Contribute your ' + panel + '!</a></p>';
         });
 
         // Tab switching
